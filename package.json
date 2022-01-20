@@ -1,0 +1,12 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:suleimanov-dev/frontend.git",
+  "author": "Ramil Suleimanov <lllumineux@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
