@@ -1,16 +1,16 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import AboutMe from './views/AboutMe/AboutMe';
-import Projects from './views/Projects/Projects';
-import Project from './views/Project/Project';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import AboutMePage from "./pages/AboutMe/AboutMePage";
+import ProjectsPage from "./pages/Projects/ProjectsPage";
+import ProjectPage from "./pages/Project/ProjectPage";
 
 const App = () => {
     return (
         <Routes>
-            <Route path="" element={<AboutMe />} />
+            <Route path="" element={<AboutMePage />} />
             <Route path="projects">
-                <Route path="" element={<Projects />} />
-                <Route path=":projectName" element={<Project />} />
+                <Route path="" element={<ProjectsPage />} />
+                <Route path=":projectName" element={<ProjectPage />} />
             </Route>
         </Routes>
     );
