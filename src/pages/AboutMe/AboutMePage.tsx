@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import MainInfoService from "../../services/MainInfoService";
+import MainInfoService from "@services/MainInfoService";
 
 const AboutMePage: FC = () => {
     const [mainInfo, setMainInfo] = useState({ name: "" });

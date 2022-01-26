@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = function (_env, argv) {
     const isProduction = argv.mode === "production";
@@ -96,6 +97,7 @@ module.exports = function (_env, argv) {
         },
         resolve: {
             extensions: [".js", ".jsx", ".ts", ".tsx"],
+            plugins: [new TsconfigPathsPlugin()],
         },
         plugins: [
             isProduction &&

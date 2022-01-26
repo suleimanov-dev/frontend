@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import AboutMePage from "./pages/AboutMe/AboutMePage";
-import ProjectsPage from "./pages/Projects/ProjectsPage";
-import ProjectPage from "./pages/Project/ProjectPage";
+import AboutMePage from "@pages/AboutMe/AboutMePage";
+import ProjectsPage from "@pages/Projects/ProjectsPage";
+import ProjectPage from "@pages/Project/ProjectPage";
 
 const App = () => {
     return (
