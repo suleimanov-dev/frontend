@@ -1,14 +1,15 @@
-import React from "react";
-import App from "@/App";
-import { render } from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import axios from "axios";
+import React from 'react';
+import {render} from 'react-dom';
+import {BrowserRouter} from 'react-router-dom';
+import axios from 'axios';
 
-axios.defaults.baseURL = "http://127.0.0.1:8000";
+import App from '@/App';
+
+axios.defaults.baseURL = 'http://127.0.0.1:8000';
 
 render(
     <BrowserRouter>
-        <App />
+        <App/>
     </BrowserRouter>,
-    document.querySelector("#root")
+    document.querySelector('#root')
 );

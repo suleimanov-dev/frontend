@@ -1,11 +1,15 @@
-import React, { FC, useEffect, useState } from "react";
-import MainInfoService from "@services/MainInfoService";
+import React, {FC, useEffect, useState} from 'react';
+
+import MainInfoService from '@services/MainInfoService';
+
+import classes from './AboutMePage.module.sass';
 
 const AboutMePage: FC = () => {
-    const [mainInfo, setMainInfo] = useState({ name: "" });
+    const [mainInfo, setMainInfo] = useState({name: ''});
 
     useEffect(() => {
-        fetchMainInfo().then((r) => {});
+        fetchMainInfo().then((r) => {
+        });
     }, []);
 
     async function fetchMainInfo() {
@@ -13,7 +17,11 @@ const AboutMePage: FC = () => {
         setMainInfo(mainInfo);
     }
 
-    return <div>My name is {mainInfo.name}</div>;
+    return (
+        <header className={classes.myText}>
+            My name is {mainInfo.name}
+        </header>
+    );
 };
 
 export default AboutMePage;

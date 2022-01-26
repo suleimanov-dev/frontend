@@ -1,23 +1,23 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const TerserWebpackPlugin = require("terser-webpack-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = function (_env, argv) {
-    const isProduction = argv.mode === "production";
+    const isProduction = argv.mode === 'production';
     const isDevelopment = !isProduction;
 
     return {
-        devtool: isDevelopment && "cheap-module-source-map",
-        entry: "./src/index.tsx",
+        devtool: isDevelopment && 'cheap-module-source-map',
+        entry: './src/index.tsx',
         output: {
-            path: path.resolve(__dirname, "dist"),
-            filename: "assets/js/[name].[contenthash:8].js",
-            publicPath: "/",
+            path: path.resolve(__dirname, 'dist'),
+            filename: 'assets/js/[name].[contenthash:8].js',
+            publicPath: '/',
         },
         module: {
             rules: [
@@ -25,27 +25,28 @@ module.exports = function (_env, argv) {
                     test: /\.(js|jsx|ts|tsx)$/,
                     exclude: /node_modules/,
                     use: {
-                        loader: "babel-loader",
+                        loader: 'babel-loader',
                         options: {
                             cacheDirectory: true,
                             cacheCompression: false,
-                            envName: isProduction ? "production" : "development",
+                            envName: isProduction ? 'production' : 'development',
                         },
                     },
                 },
                 {
-                    test: /\.s[ac]ss$/,
+                    test: /\.module.s[ac]ss$/,
                     use: [
-                        isProduction ? MiniCssExtractPlugin.loader : "style-loader",
+                        isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
                         {
-                            loader: "css-loader",
+                            loader: 'css-loader',
                             options: {
                                 importLoaders: 2,
+                                modules: true,
+                                sourceMap: isDevelopment,
                             },
                         },
-                        "resolve-url-loader",
                         {
-                            loader: "sass-loader",
+                            loader: 'sass-loader',
                             options: {
                                 sourceMap: true,
                             },
@@ -53,21 +54,20 @@ module.exports = function (_env, argv) {
                     ],
                 },
                 {
-                    test: /\.module.s[ac]ss$/,
+                    test: /\.s[ac]ss$/,
+                    exclude: /\.module.s[ac]ss$/,
                     use: [
-                        isProduction ? MiniCssExtractPlugin.loader : "style-loader",
+                        isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
                         {
-                            loader: "css-loader",
+                            loader: 'css-loader',
                             options: {
                                 importLoaders: 2,
                             },
                         },
-                        "resolve-url-loader",
                         {
-                            loader: "sass-loader",
+                            loader: 'sass-loader',
                             options: {
                                 sourceMap: true,
-                                modules: true,
                             },
                         },
                     ],
@@ -75,41 +75,41 @@ module.exports = function (_env, argv) {
                 {
                     test: /\.(png|jpg|gif)$/i,
                     use: {
-                        loader: "url-loader",
+                        loader: 'url-loader',
                         options: {
                             limit: 8192,
-                            name: "static/media/[name].[hash:8].[ext]",
+                            name: 'static/media/[name].[hash:8].[ext]',
                         },
                     },
                 },
                 {
                     test: /\.svg$/,
-                    use: ["@svgr/webpack"],
+                    use: ['@svgr/webpack'],
                 },
                 {
                     test: /\.(eot|otf|ttf|woff|woff2)$/,
-                    loader: require.resolve("file-loader"),
+                    loader: require.resolve('file-loader'),
                     options: {
-                        name: "static/media/[name].[hash:8].[ext]",
+                        name: 'static/media/[name].[hash:8].[ext]',
                     },
                 },
             ],
         },
         resolve: {
-            extensions: [".js", ".jsx", ".ts", ".tsx"],
+            extensions: ['.js', '.ts', '.tsx', '.sass'],
             plugins: [new TsconfigPathsPlugin()],
         },
         plugins: [
             isProduction &&
-                new MiniCssExtractPlugin({
-                    filename: "assets/css/[name].[contenthash:8].css",
-                    chunkFilename: "assets/css/[name].[contenthash:8].chunk.css",
-                }),
+            new MiniCssExtractPlugin({
+                filename: 'assets/css/[name].[contenthash:8].css',
+                chunkFilename: 'assets/css/[name].[contenthash:8].chunk.css',
+            }),
             new webpack.DefinePlugin({
-                "process.env.NODE_ENV": JSON.stringify(isProduction ? "production" : "development"),
+                'process.env.NODE_ENV': JSON.stringify(isProduction ? 'production' : 'development'),
             }),
             new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, "public/index.html"),
+                template: path.resolve(__dirname, 'public/index.html'),
                 inject: true,
             }),
             new ForkTsCheckerWebpackPlugin({
@@ -137,7 +137,7 @@ module.exports = function (_env, argv) {
                 new OptimizeCssAssetsPlugin(),
             ],
             splitChunks: {
-                chunks: "all",
+                chunks: 'all',
                 minSize: 0,
                 maxInitialRequests: 20,
                 maxAsyncRequests: 20,
@@ -146,7 +146,7 @@ module.exports = function (_env, argv) {
                         test: /[\\/]node_modules[\\/]/,
                         name(module, chunks, cacheGroupKey) {
                             const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-                            return `${cacheGroupKey}.${packageName.replace("@", "")}`;
+                            return `${cacheGroupKey}.${packageName.replace('@', '')}`;
                         },
                     },
                     common: {
@@ -155,7 +155,7 @@ module.exports = function (_env, argv) {
                     },
                 },
             },
-            runtimeChunk: "single",
+            runtimeChunk: 'single',
         },
         devServer: {
             compress: true,
