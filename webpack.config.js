@@ -97,6 +97,9 @@ module.exports = function (_env, argv) {
         },
         resolve: {
             extensions: ['.js', '.ts', '.tsx', '.sass'],
+            alias: {
+                '@styles': path.join(__dirname, 'src/styles')
+            },
             plugins: [new TsconfigPathsPlugin()],
         },
         plugins: [
