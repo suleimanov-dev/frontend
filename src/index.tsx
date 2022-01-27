@@ -3,9 +3,10 @@ import {render} from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import axios from 'axios';
 
+import {API_URL} from '@/config';
 import App from '@/App';
 
-axios.defaults.baseURL = 'http://127.0.0.1:8000';
+axios.defaults.baseURL = API_URL;
 
 render(
     <BrowserRouter>

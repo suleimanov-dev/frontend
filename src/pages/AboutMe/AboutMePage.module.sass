@@ -1,4 +1,90 @@
 @use '~@styles/index.sass' as styles
 
-.myText
-    color: styles.$purple
+.header
+    &__link
+        text-decoration: none
+        color: styles.$primary-content
+
+
+    &__download-btn
+        color: styles.$primary-content
+        border: 1px solid styles.$primary-content
+        border-radius: 15px
+        background: transparent
+        font-size: styles.$small-medium
+        padding: 6px 31px
+
+
+// Main
+.resume
+    $self: &
+
+    display: flex
+    padding: 84px 74px 0
+
+    &__portrait
+        object-fit: cover
+        border-radius: 15px
+        width: 402px
+        height: 402px
+
+    &__content
+        background: styles.$primary-gradient
+        border-radius: 15px
+        width: 100%
+        padding: 42px 54px
+        margin-left: 33px
+
+        #{ $self }__name
+            font-size: styles.$extra-large
+            font-weight: styles.$bold
+
+        #{ $self }__info
+            color: styles.$secondary-content
+            display: flex
+            align-items: center
+            margin-top: 7px
+
+            #{ $self }__job
+                font-weight: styles.$bold
+                font-size: styles.$small-medium
+
+            #{ $self }__location
+                display: flex
+                align-items: center
+                font-size: styles.$small
+                margin-left: 10px
+
+                &__icon
+                    height: styles.$small - 1px
+                    margin-right: 3px
+
+        #{ $self }__contact-links
+            display: flex
+            margin-top: 15.5px
+
+            a
+                display: flex
+                justify-content: center
+                align-items: center
+                border: 1px solid styles.$secondary-stroke
+                border-radius: 100px
+                background: styles.$secondary-fill
+                transition: ease-out 0.2s
+                width: 24.5px
+                height: 24.5px
+
+                svg
+                    fill: styles.$tertiary-content
+                    transition: ease-out 0.2s
+                    width: 10px
+                    height: 10px
+
+            a:hover
+                background: styles.$secondary-stroke
+
+                svg
+                    fill: styles.$primary-content
+
+            a:nth-child(n+2)
+                margin-left: 10.5px
