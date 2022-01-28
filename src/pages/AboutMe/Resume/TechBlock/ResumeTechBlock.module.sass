@@ -1,0 +1,14 @@
+@use '~@styles/index.sass' as styles
+
+.resume__tech-blocks
+    font-size: styles.$medium-large
+    margin-top: 40px
+
+    .tech-block .highlight
+        font-weight: styles.$semi-bold
+        color: styles.$secondary-content
+
+    $color-collection: (styles.$purple, styles.$green, styles.$yellow, styles.$red)
+    @for $i from 0 to length($color-collection)
+        .tech-block:nth-child(#{$i+1}) .highlight
+            color: nth($color-collection, $i+1)

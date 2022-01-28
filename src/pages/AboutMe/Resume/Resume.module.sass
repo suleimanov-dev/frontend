@@ -1,0 +1,22 @@
+@use '~@styles/index.sass' as styles
+
+.resume
+    display: flex
+    padding: 84px 74px 0
+
+    .portrait
+        object-fit: cover
+        border-radius: 15px
+        width: 402px
+        height: 402px
+
+    .content
+        background: styles.$primary-gradient
+        border-radius: 15px
+        width: 100%
+        padding: 42px 54px
+        margin-left: 33px
+
+        .name
+            font-size: styles.$extra-large
+            font-weight: styles.$bold

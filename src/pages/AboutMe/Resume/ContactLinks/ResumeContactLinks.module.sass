@@ -1,0 +1,31 @@
+@use '~@styles/index.sass' as styles
+
+.resume__contact-links
+    display: flex
+    margin-top: 15.5px
+
+    .contact-link
+        display: flex
+        justify-content: center
+        align-items: center
+        border: 1px solid styles.$secondary-stroke
+        border-radius: 100px
+        background: styles.$secondary-fill
+        transition: ease-out 0.2s
+        width: 24.5px
+        height: 24.5px
+
+        &__icon, &__icon path
+            fill: styles.$tertiary-content
+            transition: ease-out 0.2s
+            width: 10px
+            height: 10px
+
+    .contact-link:hover
+        background: styles.$secondary-stroke
+
+        .contact-link__icon, .contact-link__icon path
+            fill: styles.$primary-content
+
+    .contact-link:nth-child(n+2)
+        margin-left: 10.5px
