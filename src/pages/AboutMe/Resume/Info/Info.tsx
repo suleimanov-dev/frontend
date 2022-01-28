@@ -2,9 +2,9 @@ import React, {FC} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons';
 
-import classes from './ResumeInfo.module.sass';
+import classes from './Info.module.sass';
 
-const ResumeInfo: FC = () => {
+const Info: FC = () => {
     return (
         <div className={classes['resume__info']}>
             <div className={classes['job']}>Web-Developer</div>
@@ -16,4 +16,4 @@ const ResumeInfo: FC = () => {
     );
 };
 
-export default ResumeInfo;
+export default Info;

@@ -3,13 +3,13 @@ import 'external-svg-loader';
 
 import {MEDIA_URL} from '@/config';
 
-import classes from './ResumeContactLinks.module.sass';
+import classes from './ContactLinks.module.sass';
 
 interface ResumeContactLinksProps {
     contactLinks: object[]
 }
 
-const ResumeContactLinks: FC<ResumeContactLinksProps> = (props) => {
+const ContactLinks: FC<ResumeContactLinksProps> = (props) => {
     return (
         <div className={classes['resume__contact-links']}>
             {props.contactLinks.map((link: any) => (
@@ -21,4 +21,4 @@ const ResumeContactLinks: FC<ResumeContactLinksProps> = (props) => {
     );
 };
 
-export default ResumeContactLinks;
+export default ContactLinks;

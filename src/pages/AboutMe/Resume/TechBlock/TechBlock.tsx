@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-import classes from './ResumeTechBlock.module.sass';
+import classes from './TechBlock.module.sass';
 
 const techBlockExtraText: any = {
     'BACKEND': ' for back-end',
@@ -38,7 +38,7 @@ interface ResumeTechBlockProps {
     technologyBlocks: object[]
 }
 
-const ResumeTechBlock: FC<ResumeTechBlockProps> = (props) => {
+const TechBlock: FC<ResumeTechBlockProps> = (props) => {
     return (
         <div className={classes['resume__tech-blocks']}>
             {props.technologyBlocks.map((techBlock: any) => (
@@ -55,4 +55,4 @@ const ResumeTechBlock: FC<ResumeTechBlockProps> = (props) => {
     );
 };
 
-export default ResumeTechBlock;
+export default TechBlock;
