@@ -5,7 +5,7 @@ import classes from './Header.module.sass';
 
 const Header: FC = () => {
     return (
-        <header>
+        <header className={classes['header']}>
             <Link className={classes['nav-link']} to="/projects">Projects ---{'>'}</Link>
             <button className={classes['download-btn']}>Download resume</button>
         </header>

@@ -13,8 +13,14 @@ const ContactLinks: FC<ResumeContactLinksProps> = (props) => {
     return (
         <div className={classes['resume__contact-links']}>
             {props.contactLinks.map((link: any) => (
-                <a className={classes['contact-link']} href={link.link} title={link.name} target="_blank" key={link.id}>
-                    <svg className={classes['contact-link__icon']} data-src={MEDIA_URL + link.icon}/>
+                <a
+                    className={classes['contact-link']}
+                    href={link['link']}
+                    title={link['name']}
+                    target="_blank"
+                    key={link['id']}
+                >
+                    <svg className={classes['contact-link__icon']} data-src={MEDIA_URL + link['icon']} />
                 </a>
             ))}
         </div>

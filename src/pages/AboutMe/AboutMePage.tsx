@@ -3,6 +3,9 @@ import React, {FC, useEffect, useState} from 'react';
 import MainInfoService from '@services/MainInfoService';
 import Header from '@pages/AboutMe/Header/Header';
 import Resume from '@pages/AboutMe/Resume/Resume';
+import Timeline from '@pages/AboutMe/Timeline/Timeline';
+
+import classes from './AboutMePage.module.sass'
 
 const AboutMePage: FC = () => {
     const [mainInfo, setMainInfo] = useState({
@@ -24,13 +27,14 @@ const AboutMePage: FC = () => {
     return (
         <>
             <Header/>
-            <main>
+            <main className={classes['main']}>
                 <Resume
                     portrait={mainInfo['portrait']}
                     name={mainInfo['name']}
                     contactLinks={mainInfo['contact_links']}
                     technologyBlocks={mainInfo['technology_blocks']}
                 />
+                <Timeline />
             </main>
         </>
     );

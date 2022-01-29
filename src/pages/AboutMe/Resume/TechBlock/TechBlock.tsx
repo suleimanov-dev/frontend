@@ -42,13 +42,14 @@ const TechBlock: FC<ResumeTechBlockProps> = (props) => {
     return (
         <div className={classes['resume__tech-blocks']}>
             {props.technologyBlocks.map((techBlock: any) => (
-                <div className={classes['tech-block']}
-                     dangerouslySetInnerHTML={{
-                         __html: `&bull;&nbsp;${
-                             processTechBlockText(techBlock.content) + techBlockExtraText[techBlock.type]
-                         };`
-                     }}
-                     key={techBlock.id}
+                <div
+                    className={classes['tech-block']}
+                    dangerouslySetInnerHTML={{
+                        __html: `&bull;&nbsp;${
+                            processTechBlockText(techBlock['content']) + techBlockExtraText[techBlock['type']]
+                        };`
+                    }}
+                    key={techBlock['id']}
                 />
             ))}
         </div>

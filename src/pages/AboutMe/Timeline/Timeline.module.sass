@@ -1,0 +1,60 @@
+@use '~@styles/index.sass' as styles
+
+.timeline
+    .timeline-block
+        display: flex
+        transition: background 0.2s ease-out
+        border-radius: 15px
+        padding: 15px 30px
+
+        &__left
+            font-weight: styles.$bold
+            line-height: styles.$medium
+
+        &__right
+            margin-left: 5px
+
+            > div:nth-child(n+2)
+                margin-top: 7px
+
+            .years
+                font-weight: styles.$bold
+
+            .text
+                color: styles.$secondary-content
+
+                a
+                    color: styles.$secondary-content
+                    font-weight: styles.$semi-bold
+                    font-style: italic
+
+            .attachments
+                overflow: hidden
+                transition:  height .4s ease, margin .4s ease
+                height: 0
+
+                .attachment
+                    object-fit: cover
+                    border-radius: 15px
+                    width: 200px
+                    height: 200px
+
+                .attachment:nth-last-child(n+2)
+                    margin-right: 11px
+
+            .hint
+                display: flex
+                align-items: center
+                color: styles.$tertiary-content
+                font-size: styles.$small-medium
+                margin-top: 0 !important
+
+                &__icon
+                    height: styles.$small-medium - 4px
+                    margin-right: 2.5px
+
+    .timeline-block[data-attachment-hidden]:hover
+        background: styles.$primary-fill
+
+    .timeline-block:nth-child(n+2)
+        margin-top: 13px
