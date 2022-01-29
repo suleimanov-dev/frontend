@@ -58,7 +58,7 @@ const Timeline: FC = () => {
     }, []);
 
     async function fetchTimeline() {
-        const timeline = await TimelineService.get();
+        const timeline = await TimelineService.list();
         setTimeline(timeline);
     }
 

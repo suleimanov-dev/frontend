@@ -1,0 +1,18 @@
+@use '~@styles/index.sass' as styles
+
+.description
+    background: styles.$primary-gradient
+    border-radius: 15px
+    padding: 23px 35px
+
+    .article:nth-child(n+2)
+        margin-top: 25px
+
+    .article
+        .title
+            font-weight: styles.$bold
+            font-size: styles.$medium-large
+
+        .text
+            color: styles.$secondary-content
+            margin-top: 10px

@@ -1,0 +1,61 @@
+@use '~@styles/index.sass' as styles
+
+.main-info
+    padding: 0 35px
+
+    > div:nth-child(n+2)
+        margin-top: 17px
+
+    .icon-name
+        display: flex
+        align-items: center
+
+        &__icon
+            width: 57px
+            height: 57px
+            border-radius: 6px
+
+        &__name
+            font-weight: styles.$bold
+            font-size: styles.$large
+            margin-left: 14px
+
+    .dev-info
+        display: flex
+        align-items: center
+        font-size: styles.$small-medium
+
+        &__element:nth-child(n+2)
+            margin-left: 29px
+
+        span
+            color: styles.$secondary-content
+
+    .links
+        display: flex
+        align-items: center
+
+        .link
+            display: flex
+            align-items: center
+            text-decoration: none
+            border: 1px solid styles.$secondary-stroke
+            border-radius: 100px
+            background: styles.$secondary-fill
+            padding-left: 11px
+
+            &__icon
+                display: flex
+                align-items: center
+                width: 12.5px
+                height: 12.5px
+
+            &__link
+                color: styles.$secondary-content
+                font-size: styles.$small
+                border-left: 1px solid styles.$secondary-stroke
+                padding: 5.5px 22px 5.5px 11px
+                margin-left: 11px
+
+        .link:nth-child(n+2)
+            margin-left: 29px
