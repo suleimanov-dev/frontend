@@ -24,15 +24,27 @@ const processBlockClick = (e: any, id: number) => {
                 isAttachmentsHidden ?
                     attachments.setAttribute(
                         'style',
-                        `height: ${attachments.scrollHeight}px; margin-bottom: 7px !important`
+                        `max-height: ${attachments.scrollHeight}px; margin-bottom: 7px !important`
                     )
                     :
                     attachments.setAttribute(
                         'style',
-                        'height: 0; margin-bottom: 0 !important'
+                        'max-height: 0; margin-bottom: 0 !important'
                     )
 
                 block.setAttribute('data-attachment-hidden', (!isAttachmentsHidden).toString());
+                const hint = block.querySelector(`.${classes['hint']}`);
+                if (hint) {
+                    const hintVerb = hint.querySelector('span');
+                    if (hintVerb) hintVerb.innerHTML = isAttachmentsHidden ? 'hide' : 'show';
+                    const hintIcon = hint.querySelector('svg');
+                    if (hintIcon) {
+                        isAttachmentsHidden ?
+                            hintIcon.setAttribute('style', 'transform: rotate(180deg)')
+                            :
+                            hintIcon.setAttribute('style', 'transform: rotate(0deg)')
+                    }
+                }
             }
         }
     }
@@ -72,7 +84,7 @@ const Timeline: FC = () => {
                             <>
                                 <div className={classes['attachments']}>
                                     {timelineBlock['attachments'].map((attachment: any) => (
-                                        <img
+                                        <img key={attachment['id']}
                                             className={classes['attachment']}
                                             src={`${MEDIA_URL}/${attachment['attachment']}`}
                                             alt="Attachment"
@@ -81,7 +93,7 @@ const Timeline: FC = () => {
                                 </div>
                                 <div className={classes['hint']}>
                                     <FontAwesomeIcon className={classes['hint__icon']} icon={faChevronDown} />
-                                    click on card to show attachments
+                                    click on the card to&nbsp;<span>show</span>&nbsp;attachments
                                 </div>
                             </>
                         ) : null}

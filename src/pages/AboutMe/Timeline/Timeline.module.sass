@@ -30,19 +30,24 @@
 
             .attachments
                 overflow: hidden
-                transition:  height .4s ease, margin .4s ease
-                height: 0
+                transition:  max-height .4s ease, margin-bottom .4s ease
+                max-height: 0
 
                 .attachment
+                    transition: opacity .2s ease-out
+                    cursor: pointer
                     object-fit: cover
                     border-radius: 15px
                     width: 200px
                     height: 200px
 
+                .attachment:hover
+                    opacity: .65
+
                 .attachment:nth-last-child(n+2)
                     margin-right: 11px
 
-            .hint
+        .hint
                 display: flex
                 align-items: center
                 color: styles.$tertiary-content
@@ -50,6 +55,7 @@
                 margin-top: 0 !important
 
                 &__icon
+                    transition: transform ease .4s
                     height: styles.$small-medium - 4px
                     margin-right: 2.5px
 
