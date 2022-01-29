@@ -1,12 +1,14 @@
 import React, {FC, useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
+import ReactPlayer from 'react-player';
 
 import ProjectsInfoService from '@services/ProjectsInfoService';
 import Header from '@pages/Project/Header/Header';
 import MainInfo from '@pages/Project/MainInfo/MainInfo';
+import Description from '@pages/Project/Description/Description';
 
 import classes from './ProjectPage.module.sass'
-import Description from '@pages/Project/Description/Description';
+import {MEDIA_URL} from '@/config';
 
 const ProjectPage: FC = () => {
     const params = useParams();
@@ -19,6 +21,8 @@ const ProjectPage: FC = () => {
         designation: '',
         links: [],
         articles: [],
+        overview_video: '',
+        overview_video_preview: '',
     });
 
     useEffect(() => {
@@ -43,6 +47,14 @@ const ProjectPage: FC = () => {
                     links={projectInfo['links']}
                 />
                 <Description articles={projectInfo['articles']} />
+                {classes['overview-video'] ?
+                    <ReactPlayer
+                        className={classes['overview-video']}
+                        url={`${MEDIA_URL}/${projectInfo['overview_video']}`}
+                        controls={true}
+                        // light={`${MEDIA_URL}/${projectInfo['overview_video_preview']}`}
+                        // playIcon={<FontAwesomeIcon icon={faPlay}/>}
+                    /> : null}
             </main>
         </>
     );
