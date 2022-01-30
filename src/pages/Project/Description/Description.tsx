@@ -12,14 +12,20 @@ interface DescriptionProps {
 
 const Description: FC<DescriptionProps> = (props) => {
     return (
-        <div className={classes['description']}>
-            {props.articles.map((article: any) => (
-                <div className={classes['article']} key={article['id']}>
-                    <div className={classes['title']}>{capitalize(article['title'])}</div>
-                    <div className={classes['text']} dangerouslySetInnerHTML={{__html: article['text']}} />
+        <>
+            {props.articles.length > 0 ?
+                <div className={classes['description']}>
+                    {props.articles.map((article: any) => (
+                        <div className={classes['article']} key={article['id']}>
+                            <div className={classes['title']}>{capitalize(article['title'])}</div>
+                            <div className={classes['text']} dangerouslySetInnerHTML={{__html: article['text']}} />
+                        </div>
+                    ))}
                 </div>
-            ))}
-        </div>
+                :
+                null
+            }
+        </>
     );
 };
 

@@ -20,7 +20,7 @@ interface MainInfoProps {
     monthCreated: string,
     involvement: string,
     designation: string,
-    links: object[]
+    links: object[],
 }
 
 const MainInfo: FC<MainInfoProps> = (props) => {
@@ -41,22 +41,26 @@ const MainInfo: FC<MainInfoProps> = (props) => {
                     Designation:&nbsp;<span>{capitalize(props.designation)}</span>
                 </div>
             </div>
-            <div className={classes['links']}>
-                {props.links.map((link: any) => (
-                    <a
-                        className={classes['link']}
-                        href={link['link']}
-                        target='_blank'
-                        title={link['link_type']['name']}
-                        key={link['id']}
-                    >
-                        <div className={classes['link__icon']}>
-                            <svg data-src={MEDIA_URL + link['link_type']['icon']} />
-                        </div>
-                        <div className={classes['link__link']}>{link['link']}</div>
-                    </a>
-                ))}
-            </div>
+            {props.links.length > 0 ?
+                <div className={classes['links']}>
+                    {props.links.map((link: any) => (
+                        <a
+                            className={classes['link']}
+                            href={link['link']}
+                            target='_blank'
+                            title={link['link_type']['name']}
+                            key={link['id']}
+                        >
+                            <div className={classes['link__icon']}>
+                                <svg data-src={MEDIA_URL + link['link_type']['icon']} />
+                            </div>
+                            <div className={classes['link__link']}>{link['link']}</div>
+                        </a>
+                    ))}
+                </div>
+                :
+                null
+            }
         </div>
     );
 };

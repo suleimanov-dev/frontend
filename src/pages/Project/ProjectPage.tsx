@@ -1,14 +1,14 @@
 import React, {FC, useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
-import ReactPlayer from 'react-player';
 
 import ProjectsInfoService from '@services/ProjectsInfoService';
 import Header from '@pages/Project/Header/Header';
 import MainInfo from '@pages/Project/MainInfo/MainInfo';
 import Description from '@pages/Project/Description/Description';
+import Overview from '@pages/Project/Overview/Overview';
+import Labels from '@pages/Project/Labels/Labels';
 
 import classes from './ProjectPage.module.sass'
-import {MEDIA_URL} from '@/config';
 
 const ProjectPage: FC = () => {
     const params = useParams();
@@ -23,6 +23,8 @@ const ProjectPage: FC = () => {
         articles: [],
         overview_video: '',
         overview_video_preview: '',
+        technologies: [],
+        instruments: [],
     });
 
     useEffect(() => {
@@ -47,14 +49,8 @@ const ProjectPage: FC = () => {
                     links={projectInfo['links']}
                 />
                 <Description articles={projectInfo['articles']} />
-                {classes['overview-video'] ?
-                    <ReactPlayer
-                        className={classes['overview-video']}
-                        url={`${MEDIA_URL}/${projectInfo['overview_video']}`}
-                        controls={true}
-                        // light={`${MEDIA_URL}/${projectInfo['overview_video_preview']}`}
-                        // playIcon={<FontAwesomeIcon icon={faPlay}/>}
-                    /> : null}
+                <Overview video={projectInfo['overview_video']} preview={projectInfo['overview_video_preview']} />
+                <Labels technologies={projectInfo.technologies} instruments={projectInfo.instruments} />
             </main>
         </>
     );
