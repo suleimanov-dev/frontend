@@ -9,7 +9,7 @@ const Info: FC = () => {
         <div className={classes['resume__info']}>
             <div className={classes['job']}>Web-Developer</div>
             <div className={classes['location']}>
-                <FontAwesomeIcon className={classes['location__icon']} icon={faMapMarkerAlt} />
+                <FontAwesomeIcon className={classes['location__icon']} icon={faMapMarkerAlt}/>
                 Kazan, Russia
             </div>
         </div>

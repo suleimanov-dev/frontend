@@ -20,7 +20,7 @@ const ContactLinks: FC<ResumeContactLinksProps> = (props) => {
                     target="_blank"
                     key={link['id']}
                 >
-                    <svg className={classes['contact-link__icon']} data-src={MEDIA_URL + link['icon']} />
+                    <svg className={classes['contact-link__icon']} data-src={MEDIA_URL + link['icon']}/>
                 </a>
             ))}
         </div>

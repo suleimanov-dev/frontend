@@ -1,0 +1,19 @@
+@use '~@styles/index.sass' as styles
+
+.projects
+    width: 100%
+    margin-left: 20px
+
+    .project
+        text-decoration: none
+        color: styles.$primary-content
+        display: block
+        border-radius: 15px
+        background: styles.$primary-gradient
+        padding: 23px
+
+        > div:nth-child(n+2)
+            margin-top: 25px
+
+    .project:nth-child(n+2)
+        margin-top: 23px

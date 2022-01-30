@@ -5,7 +5,7 @@ import {MEDIA_URL} from '@/config';
 
 import classes from './Labels.module.sass';
 
-const orderByName = (arrayToSort: object[], key: string): object[] => {
+const orderLabelsByName = (arrayToSort: object[], key: string): object[] => {
     return arrayToSort.sort((f: any, s: any) => f[key]['name'] >= s[key]['name'] ? 1 : -1);
 }
 
@@ -22,7 +22,7 @@ const Labels: FC<LabelsProps> = (props) => {
                     <div className={classes['technologies-block']}>
                         <div className={classes['title']}>Technologies</div>
                         <div className={classes['content']}>
-                            {orderByName(props.technologies, 'technology').map((technology: any) => (
+                            {orderLabelsByName(props.technologies, 'technology').map((technology: any) => (
                                 <div className={classes['label']} key={technology['id']}>
                                     <img
                                         className={classes['label__icon']}
@@ -37,7 +37,7 @@ const Labels: FC<LabelsProps> = (props) => {
                     <div className={classes['instruments-block']}>
                         <div className={classes['title']}>Instruments</div>
                         <div className={classes['content']}>
-                            {orderByName(props.instruments, 'instrument').map((instrument: any) => (
+                            {orderLabelsByName(props.instruments, 'instrument').map((instrument: any) => (
                                 <div className={classes['label']} key={instrument['id']}>
                                     <img
                                         className={classes['label__icon']}

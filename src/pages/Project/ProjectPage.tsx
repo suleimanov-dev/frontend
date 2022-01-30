@@ -1,7 +1,7 @@
 import React, {FC, useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 
-import ProjectsInfoService from '@services/ProjectsInfoService';
+import ProjectService from '@services/ProjectService';
 import Header from '@pages/Project/Header/Header';
 import MainInfo from '@pages/Project/MainInfo/MainInfo';
 import Description from '@pages/Project/Description/Description';
@@ -13,7 +13,7 @@ import classes from './ProjectPage.module.sass'
 const ProjectPage: FC = () => {
     const params = useParams();
 
-    const [projectInfo, setProjectInfo] = useState({
+    const [project, setProject] = useState({
         name: '',
         icon: '',
         month_created: '',
@@ -32,25 +32,25 @@ const ProjectPage: FC = () => {
     }, []);
 
     async function fetchProjectInfo() {
-        const projectInfo = await ProjectsInfoService.get(params.projectName);
-        setProjectInfo(projectInfo);
+        const project = await ProjectService.get(params.projectName);
+        setProject(project);
     }
 
     return (
         <>
-            <Header />
+            <Header/>
             <main className={classes['main']}>
                 <MainInfo
-                    name={projectInfo['name']}
-                    icon={projectInfo['icon']}
-                    monthCreated={projectInfo['month_created']}
-                    involvement={projectInfo['involvement']}
-                    designation={projectInfo['designation']}
-                    links={projectInfo['links']}
+                    name={project['name']}
+                    icon={project['icon']}
+                    monthCreated={project['month_created']}
+                    involvement={project['involvement']}
+                    designation={project['designation']}
+                    links={project['links']}
                 />
-                <Description articles={projectInfo['articles']} />
-                <Overview video={projectInfo['overview_video']} preview={projectInfo['overview_video_preview']} />
-                <Labels technologies={projectInfo.technologies} instruments={projectInfo.instruments} />
+                <Description articles={project['articles']}/>
+                <Overview video={project['overview_video']} preview={project['overview_video_preview']}/>
+                <Labels technologies={project.technologies} instruments={project.instruments}/>
             </main>
         </>
     );

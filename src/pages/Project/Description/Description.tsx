@@ -1,10 +1,8 @@
 import React, {FC} from 'react';
 
-import classes from './Description.module.sass';
+import {capitalize} from '@utils/helpers';
 
-const capitalize = (text: string): string => {
-    return text ? text.charAt(0).toUpperCase() + text.slice(1).toLowerCase() : '';
-};
+import classes from './Description.module.sass';
 
 interface DescriptionProps {
     articles: object[],
@@ -18,7 +16,7 @@ const Description: FC<DescriptionProps> = (props) => {
                     {props.articles.map((article: any) => (
                         <div className={classes['article']} key={article['id']}>
                             <div className={classes['title']}>{capitalize(article['title'])}</div>
-                            <div className={classes['text']} dangerouslySetInnerHTML={{__html: article['text']}} />
+                            <div className={classes['text']} dangerouslySetInnerHTML={{__html: article['text']}}/>
                         </div>
                     ))}
                 </div>

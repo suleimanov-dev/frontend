@@ -1,0 +1,30 @@
+@use '~@styles/index.sass' as styles
+
+.labels
+    .instruments
+        margin-top: 8px
+
+    .technologies, .instruments
+        display: flex
+        align-items: center
+
+        .title
+            color: styles.$tertiary-content
+            font-size: styles.$small-medium
+
+        .content
+            display: flex
+            align-items: center
+            margin-left: 10px
+
+            .label
+                display: inline-block
+                color: styles.$tertiary-content
+                font-size: styles.$extra-small
+                border: 1px solid styles.$secondary-stroke
+                border-radius: 100px
+                background: styles.$secondary-fill
+                padding: 1px 9.5px
+
+            .label:nth-last-child(n+2)
+                margin-right: 4px

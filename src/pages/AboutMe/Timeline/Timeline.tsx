@@ -2,14 +2,11 @@ import React, {FC, useEffect, useState} from 'react';
 import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-import TimelineService from '@services/TimelineService';
 import {MEDIA_URL} from '@/config';
+import {getYear} from '@utils/helpers';
+import TimelineService from '@services/TimelineService';
 
 import classes from './Timeline.module.sass';
-
-const getYear = (text: string): number => {
-    return new Date(text).getFullYear();
-}
 
 const processBlockClick = (e: any, id: number) => {
     if (!['A', 'IMG'].includes(e.target.tagName)) {
@@ -85,14 +82,14 @@ const Timeline: FC = () => {
                                 <div className={classes['attachments']}>
                                     {timelineBlock['attachments'].map((attachment: any) => (
                                         <img key={attachment['id']}
-                                            className={classes['attachment']}
-                                            src={`${MEDIA_URL}/${attachment['attachment']}`}
-                                            alt="Attachment"
+                                             className={classes['attachment']}
+                                             src={`${MEDIA_URL}/${attachment['attachment']}`}
+                                             alt="Attachment"
                                         />
                                     ))}
                                 </div>
                                 <div className={classes['hint']}>
-                                    <FontAwesomeIcon className={classes['hint__icon']} icon={faChevronDown} />
+                                    <FontAwesomeIcon className={classes['hint__icon']} icon={faChevronDown}/>
                                     click on the card to&nbsp;<span>show</span>&nbsp;attachments
                                 </div>
                             </>

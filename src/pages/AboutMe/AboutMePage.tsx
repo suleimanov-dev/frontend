@@ -34,7 +34,7 @@ const AboutMePage: FC = () => {
                     contactLinks={mainInfo['contact_links']}
                     technologyBlocks={mainInfo['technology_blocks']}
                 />
-                <Timeline />
+                <Timeline/>
             </main>
         </>
     );
