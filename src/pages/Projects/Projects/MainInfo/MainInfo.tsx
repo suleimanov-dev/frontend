@@ -18,7 +18,7 @@ const MainInfo: FC<MainInfoProps> = (props) => {
         <div className={classes['main-info']}>
             <img
                 className={classes['main-info__icon']}
-                src={`${MEDIA_URL}/${props.icon}`}
+                src={MEDIA_URL + props.icon}
                 alt="Project icon"
             />
             <div className={classes['main-info__info']}>

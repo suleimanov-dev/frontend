@@ -19,7 +19,7 @@ const MainInfo: FC<MainInfoProps> = (props) => {
     return (
         <div className={classes['main-info']}>
             <div className={classes['icon-name']}>
-                <img className={classes['icon-name__icon']} src={`${MEDIA_URL}/${props.icon}`} alt="Project icon"/>
+                <img className={classes['icon-name__icon']} src={MEDIA_URL + props.icon} alt="Project icon"/>
                 <div className={classes['icon-name__name']}>{props.name}</div>
             </div>
             <div className={classes['dev-info']}>

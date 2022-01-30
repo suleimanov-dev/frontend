@@ -12,7 +12,8 @@ const AboutMePage: FC = () => {
         name: '',
         portrait: '',
         contact_links: [],
-        technology_blocks: []
+        technology_blocks: [],
+        resume_file: ''
     });
 
     useEffect(() => {
@@ -26,7 +27,7 @@ const AboutMePage: FC = () => {
 
     return (
         <>
-            <Header/>
+            <Header resumeFile={mainInfo['resume_file']}/>
             <main className={classes['main']}>
                 <Resume
                     portrait={mainInfo['portrait']}

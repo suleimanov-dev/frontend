@@ -83,7 +83,7 @@ const Timeline: FC = () => {
                                     {timelineBlock['attachments'].map((attachment: any) => (
                                         <img key={attachment['id']}
                                              className={classes['attachment']}
-                                             src={`${MEDIA_URL}/${attachment['attachment']}`}
+                                             src={MEDIA_URL + attachment['attachment']}
                                              alt="Attachment"
                                         />
                                     ))}

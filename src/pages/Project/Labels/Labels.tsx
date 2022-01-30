@@ -26,7 +26,7 @@ const Labels: FC<LabelsProps> = (props) => {
                                 <div className={classes['label']} key={technology['id']}>
                                     <img
                                         className={classes['label__icon']}
-                                        src={`${MEDIA_URL}/${technology['technology']['icon']}`}
+                                        src={MEDIA_URL + technology['technology']['icon']}
                                         alt={technology['technology']['name']}
                                     />
                                     <div className={classes['label__name']}>{technology['technology']['name']}</div>
@@ -41,7 +41,7 @@ const Labels: FC<LabelsProps> = (props) => {
                                 <div className={classes['label']} key={instrument['id']}>
                                     <img
                                         className={classes['label__icon']}
-                                        src={`${MEDIA_URL}/${instrument['instrument']['icon']}`}
+                                        src={MEDIA_URL + instrument['instrument']['icon']}
                                         alt={instrument['instrument']['name']}
                                     />
                                     <div className={classes['label__name']}>{instrument['instrument']['name']}</div>

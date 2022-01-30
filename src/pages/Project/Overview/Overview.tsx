@@ -17,7 +17,7 @@ const Overview: FC<OverviewVideoProps> = (props) => {
             {props.video !== '' ?
                 <ReactPlayer
                     className={classes['overview-video']}
-                    url={`${MEDIA_URL}/${props.video}`}
+                    url={MEDIA_URL + props.video}
                     controls={true}
                     // light={`${MEDIA_URL}/${projectInfo['overview_video_preview']}`}
                     // playIcon={<FontAwesomeIcon icon={faPlay}/>}
