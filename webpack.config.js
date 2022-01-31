@@ -75,9 +75,9 @@ module.exports = function (_env, argv) {
                 {
                     test: /\.(png|jpg|gif)$/i,
                     use: {
-                        loader: 'url-loader',
+                        loader: 'file-loader',
                         options: {
-                            limit: 8192,
+                            limit: 25000,
                             name: 'static/media/[name].[hash:8].[ext]',
                         },
                     },
