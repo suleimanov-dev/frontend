@@ -6,7 +6,7 @@ import classes from './Header.module.sass';
 const Header: FC = () => {
     return (
         <header className={classes['header']}>
-            <Link className={classes['nav-link']} to="/">{'<'}--- About me</Link>
+            <Link className={classes['nav-link']} to="/">About</Link>
         </header>
     );
 };

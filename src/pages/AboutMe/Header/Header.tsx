@@ -12,7 +12,7 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = (props) => {
     return (
         <header className={classes['header']}>
-            <Link className={classes['nav-link']} to="/projects">Projects ---{'>'}</Link>
+            <Link className={classes['nav-link']} to="/projects">Projects</Link>
             {props.resumeFile ?
                 <a
                     className={classes['download-btn-wrapper']}
