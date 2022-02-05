@@ -14,23 +14,27 @@ interface ProjectsProps {
 const Projects: FC<ProjectsProps> = (props) => {
     return (
         <div className={classes['projects']}>
-            {props.projects.map((project: any) => (
-                <Link
-                    className={classes['project']}
-                    to={`/projects/${project['name']}/`}
-                    key={project['id']}
-                >
-                    <MainInfo
-                        icon={project['icon']}
-                        name={project['name']}
-                        monthCreated={project['month_created']}
-                        involvement={project['involvement']}
-                        designation={project['designation']}
-                    />
-                    <ShortDescription shortDescription={project['short_description']}/>
-                    <Labels technologies={project['technologies']} instruments={project['instruments']}/>
-                </Link>
-            ))}
+            {props.projects.length > 0 ?
+                props.projects.map((project: any) => (
+                    <Link
+                        className={classes['project']}
+                        to={`/projects/${project['name']}/`}
+                        key={project['id']}
+                    >
+                        <MainInfo
+                            icon={project['icon']}
+                            name={project['name']}
+                            monthCreated={project['month_created']}
+                            involvement={project['involvement']}
+                            designation={project['designation']}
+                        />
+                        <ShortDescription shortDescription={project['short_description']}/>
+                        <Labels technologies={project['technologies']} instruments={project['instruments']}/>
+                    </Link>
+                ))
+                :
+                <div className={classes['projects-not-found']}>Projects not found</div>
+            }
         </div>
     );
 };

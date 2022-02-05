@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useEffect, useMemo, useState} from 'react';
 
 import ProjectService from '@services/ProjectService';
 import Header from '@pages/Projects/Header/Header';
@@ -9,6 +9,12 @@ import classes from './ProjectsPage.module.sass';
 
 const ProjectsPage: FC = () => {
     const [projects, setProjects] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const filteredProjects = useMemo(() => {
+        return projects.filter((project: any) => project.name.toLowerCase().includes(searchQuery.toLowerCase()))
+        }, [projects, searchQuery]
+    );
 
     useEffect(() => {
         fetchProjects().then();
@@ -23,8 +29,8 @@ const ProjectsPage: FC = () => {
         <>
             <Header/>
             <main className={classes['main']}>
-                <SearchByNameForm/>
-                <Projects projects={projects}/>
+                <SearchByNameForm setSearchQuery={setSearchQuery}/>
+                <Projects projects={filteredProjects}/>
             </main>
         </>
     );
