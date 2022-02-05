@@ -2,7 +2,6 @@ import React, {FC, useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 
 import ProjectService from '@services/ProjectService';
-import Header from '@pages/Project/Header/Header';
 import MainInfo from '@pages/Project/MainInfo/MainInfo';
 import Description from '@pages/Project/Description/Description';
 import Overview from '@pages/Project/Overview/Overview';
@@ -37,22 +36,19 @@ const ProjectPage: FC = () => {
     }
 
     return (
-        <>
-            <Header/>
-            <main className={classes['main']}>
-                <MainInfo
-                    name={project['name']}
-                    icon={project['icon']}
-                    monthCreated={project['month_created']}
-                    involvement={project['involvement']}
-                    designation={project['designation']}
-                    links={project['links']}
-                />
-                <Description articles={project['articles']}/>
-                <Overview video={project['overview_video']} preview={project['overview_video_preview']}/>
-                <Labels technologies={project.technologies} instruments={project.instruments}/>
-            </main>
-        </>
+        <main className={classes['main']}>
+            <MainInfo
+                name={project['name']}
+                icon={project['icon']}
+                monthCreated={project['month_created']}
+                involvement={project['involvement']}
+                designation={project['designation']}
+                links={project['links']}
+            />
+            <Description articles={project['articles']}/>
+            <Overview video={project['overview_video']} preview={project['overview_video_preview']}/>
+            <Labels technologies={project.technologies} instruments={project.instruments}/>
+        </main>
     );
 };
 

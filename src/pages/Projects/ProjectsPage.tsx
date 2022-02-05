@@ -1,7 +1,6 @@
 import React, {FC, useEffect, useMemo, useState} from 'react';
 
 import ProjectService from '@services/ProjectService';
-import Header from '@pages/Projects/Header/Header';
 import SearchByNameForm from '@pages/Projects/SearchByNameForm/SearchByNameForm';
 import Projects from '@pages/Projects/Projects/Projects';
 
@@ -26,13 +25,10 @@ const ProjectsPage: FC = () => {
     }
 
     return (
-        <>
-            <Header/>
-            <main className={classes['main']}>
-                <SearchByNameForm setSearchQuery={setSearchQuery}/>
-                <Projects projects={filteredProjects}/>
-            </main>
-        </>
+        <main className={classes['main']}>
+            <SearchByNameForm setSearchQuery={setSearchQuery}/>
+            <Projects projects={filteredProjects}/>
+        </main>
     );
 };
 

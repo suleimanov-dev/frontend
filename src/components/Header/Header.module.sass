@@ -1,0 +1,17 @@
+@use '~@styles/index.sass' as styles
+
+.header
+    display: flex
+    justify-content: space-between
+
+    .nav
+        > *:nth-child(n+2)
+            margin-left: 32px
+
+        &__link
+            text-decoration: none
+            color: styles.$secondary-content
+
+        &__link--current
+            text-decoration: none
+            color: styles.$primary-content

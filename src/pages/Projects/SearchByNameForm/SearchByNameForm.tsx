@@ -18,6 +18,7 @@ const SearchByNameForm: FC<SearchByNameFormProps> = (props) => {
                 name='search-by-name'
                 placeholder='Project name'
                 onChange={(e) => props.setSearchQuery(e.target.value)}
+                autoComplete={'off'}
             />
         </div>
     );
