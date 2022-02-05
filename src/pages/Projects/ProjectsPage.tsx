@@ -1,11 +1,11 @@
 import React, {FC, useEffect, useState} from 'react';
 
+import ProjectService from '@services/ProjectService';
 import Header from '@pages/Projects/Header/Header';
-import Filters from '@pages/Projects/Filters/Filters';
+import SearchByNameForm from '@pages/Projects/SearchByNameForm/SearchByNameForm';
 import Projects from '@pages/Projects/Projects/Projects';
 
 import classes from './ProjectsPage.module.sass';
-import ProjectService from '@services/ProjectService';
 
 const ProjectsPage: FC = () => {
     const [projects, setProjects] = useState([]);
@@ -23,7 +23,7 @@ const ProjectsPage: FC = () => {
         <>
             <Header/>
             <main className={classes['main']}>
-                <Filters/>
+                <SearchByNameForm/>
                 <Projects projects={projects}/>
             </main>
         </>

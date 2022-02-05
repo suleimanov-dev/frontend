@@ -5,7 +5,6 @@
         display: flex
         transition: background 0.2s ease-out
         border-radius: 15px
-        padding: 15px 30px
 
         &__left
             font-weight: styles.$bold
@@ -28,39 +27,5 @@
                     font-weight: styles.$semi-bold
                     font-style: italic
 
-            .attachments
-                overflow: hidden
-                transition: max-height .4s ease, margin-bottom .4s ease
-                max-height: 0
-
-                .attachment
-                    transition: opacity .2s ease-out
-                    cursor: pointer
-                    object-fit: cover
-                    border-radius: 15px
-                    width: 200px
-                    height: 200px
-
-                .attachment:hover
-                    opacity: .65
-
-                .attachment:nth-last-child(n+2)
-                    margin-right: 11px
-
-        .hint
-            display: flex
-            align-items: center
-            color: styles.$tertiary-content
-            font-size: styles.$small-medium
-            margin-top: 0 !important
-
-            &__icon
-                transition: transform ease .4s
-                height: styles.$small-medium - 4px
-                margin-right: 2.5px
-
-    .timeline-block[data-attachment-hidden]:hover
-        background: styles.$primary-fill
-
     .timeline-block:nth-child(n+2)
-        margin-top: 13px
+        margin-top: 43px
