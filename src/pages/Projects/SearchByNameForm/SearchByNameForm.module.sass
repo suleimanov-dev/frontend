@@ -3,6 +3,7 @@
 .search-by-name
     display: flex
     align-items: center
+    flex-direction: row-reverse
     border-radius: 15px
     background: styles.$primary-fill
     width: 100%
@@ -12,13 +13,16 @@
         color: styles.$primary-content
         font-size: styles.$small-medium
         font-weight: styles.$regular
-        border: none
+        border: 1px solid transparent
         background: transparent
         width: 100%
         padding: 15px 15px
 
     > input::placeholder
         color: styles.$tertiary-content
+
+    > input:focus ~ label > svg > path
+            fill: styles.$secondary-content
 
     > label
         display: flex
@@ -32,4 +36,5 @@
             height: 13px
 
             > path
+                transition: fill ease-out .1s
                 fill: styles.$tertiary-content

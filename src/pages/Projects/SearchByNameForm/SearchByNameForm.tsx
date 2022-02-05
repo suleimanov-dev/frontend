@@ -11,7 +11,6 @@ interface SearchByNameFormProps {
 const SearchByNameForm: FC<SearchByNameFormProps> = (props) => {
     return (
         <div className={classes['search-by-name']}>
-            <label htmlFor='search-by-name'><FontAwesomeIcon icon={faSearch} /></label>
             <input
                 id='search-by-name'
                 type='text'
@@ -20,6 +19,7 @@ const SearchByNameForm: FC<SearchByNameFormProps> = (props) => {
                 onChange={(e) => props.setSearchQuery(e.target.value)}
                 autoComplete={'off'}
             />
+            <label htmlFor='search-by-name'><FontAwesomeIcon icon={faSearch} /></label>
         </div>
     );
 };

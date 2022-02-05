@@ -39,7 +39,8 @@
             display: flex
             align-items: center
             text-decoration: none
-            border: 1px solid styles.$secondary-stroke
+            transition: border ease-out .15s
+            border: 1px solid styles.$primary-fill
             border-radius: 100px
             background: styles.$secondary-fill
             padding-left: 11px
@@ -61,3 +62,6 @@
 
         .link:nth-child(n+2)
             margin-left: 29px
+
+        .link:hover
+            border: 1px solid styles.$secondary-stroke

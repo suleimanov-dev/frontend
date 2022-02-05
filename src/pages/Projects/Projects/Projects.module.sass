@@ -8,9 +8,11 @@
         text-align: center
 
     .project
+        transition: ease-out .15s
         text-decoration: none
         color: styles.$primary-content
         display: block
+        border: 1px solid styles.$page-fill
         border-radius: 15px
         background: styles.$primary-gradient
         padding: 23px
@@ -20,3 +22,6 @@
 
     .project:nth-child(n+2)
         margin-top: 23px
+
+    .project:hover
+        border: 1px solid styles.$secondary-stroke

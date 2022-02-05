@@ -1,6 +1,7 @@
 @use '~@styles/index.sass' as styles
 
 .download-btn-wrapper
+    transition: filter ease-out .15s
     display: block
     text-decoration: none
     border: none
@@ -19,3 +20,6 @@
             -webkit-text-fill-color: transparent
             background: styles.$gradient
             -webkit-background-clip: text
+
+.download-btn-wrapper:hover
+    filter: brightness(75%)

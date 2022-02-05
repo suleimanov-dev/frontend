@@ -3,6 +3,9 @@
 .header
     display: flex
     justify-content: space-between
+    align-items: center
+    height: 32px
+    padding: 53px 74px 0
 
     .nav
         > *:nth-child(n+2)
@@ -13,5 +16,6 @@
             color: styles.$secondary-content
 
         &__link--current
+            cursor: default
             text-decoration: none
             color: styles.$primary-content
