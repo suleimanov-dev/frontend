@@ -1,0 +1,35 @@
+@use '~@styles/index.sass' as styles
+
+.search-by-name
+    display: flex
+    align-items: center
+    border-radius: 15px
+    background: styles.$primary-fill
+    width: 100%
+
+    > input
+        outline: none
+        color: styles.$primary-content
+        font-size: styles.$small-medium
+        font-weight: styles.$regular
+        border: none
+        background: transparent
+        width: 100%
+        padding: 15px 15px
+
+    > input::placeholder
+        color: styles.$tertiary-content
+
+    > label
+        display: flex
+        align-items: center
+        cursor: text
+        height: 100%
+        padding: 15px 0 15px 15px
+
+        > svg
+            width: 13px
+            height: 13px
+
+            > path
+                fill: styles.$tertiary-content

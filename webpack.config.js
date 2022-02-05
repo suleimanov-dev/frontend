@@ -64,6 +64,7 @@ module.exports = function (_env, argv) {
                                 importLoaders: 2,
                             },
                         },
+                        'postcss-loader',
                         {
                             loader: 'sass-loader',
                             options: {

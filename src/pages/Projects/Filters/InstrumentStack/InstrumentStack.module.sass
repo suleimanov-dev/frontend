@@ -1,0 +1,82 @@
+@use '~@styles/index.sass' as styles
+
+.instrument-stack
+    color: styles.$yellow
+
+    &__title
+        font-weight: styles.$bold
+
+    &__content
+        font-size: styles.$small-medium
+        margin-top: 9px
+
+        > *:nth-child(n+2)
+            margin-top: 9px
+
+        .search-by-instrument
+            outline: none
+            color: styles.$primary-content
+            border: 1px solid styles.$secondary-stroke
+            border-radius: 10px
+            background: transparent
+            font-size: styles.$small-medium
+            width: 100%
+            padding: 6px 11px
+
+        .search-by-instrument::placeholder
+            color: styles.$tertiary-content
+
+        .instruments
+            overflow-y: scroll
+            list-style-type: none
+            max-height: 210px
+
+            ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb
+                opacity: 0
+                width: 0
+
+            &__element-wrapper:nth-child(n+2)
+                margin-top: 4px
+
+            &__element
+                user-select: none
+                cursor: pointer
+                color: styles.$tertiary-content
+                display: inline-flex
+                align-items: center
+
+                > input
+                    position: absolute
+                    opacity: 0
+                    height: 0
+                    width: 0
+
+                .checkmark
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    border: 1px solid styles.$tertiary-content
+                    border-radius: 3px
+                    width: 14px
+                    height: 14px
+
+                    svg
+                        opacity: 0
+                        width: 8.75px
+                        height: 8.75px
+
+                        path
+                            color: styles.$yellow
+
+                .label
+                    margin-left: 5.25px
+
+                > input:checked
+                    ~ .checkmark
+                        border-color: styles.$yellow
+
+                        svg
+                            opacity: 1
+
+                        ~ .label
+                            color: styles.$yellow

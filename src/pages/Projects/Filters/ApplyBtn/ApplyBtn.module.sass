@@ -1,0 +1,23 @@
+@use '~@styles/index.sass' as styles
+
+.apply-btn-wrapper
+    display: block
+    cursor: pointer
+    text-decoration: none
+    border: none
+    border-radius: 15px
+    background: styles.$gradient
+    font-size: styles.$small-medium
+    padding: 1px
+    width: 100%
+
+    .apply-btn
+        border-radius: 15px
+        background: #000
+        padding: 5.5px 29px
+
+        .apply-btn-inner
+            color: transparent
+            -webkit-text-fill-color: transparent
+            background: styles.$gradient
+            -webkit-background-clip: text
