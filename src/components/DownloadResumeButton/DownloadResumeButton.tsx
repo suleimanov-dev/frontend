@@ -5,7 +5,11 @@ import MainInfoService from '@services/MainInfoService';
 
 import './DownloadResumeButton.sass';
 
-const DownloadResumeButton: FC = () => {
+interface DownloadResumeButtonProps {
+    extraClass?: string,
+}
+
+const DownloadResumeButton: FC<DownloadResumeButtonProps> = (props) => {
     const [resumeFile, setResumeFile] = useState('');
 
     useEffect(() => {
@@ -21,7 +25,7 @@ const DownloadResumeButton: FC = () => {
         <>
             {resumeFile ?
                 <a
-                    className='download-resume-btn'
+                    className={'download-resume-btn' + (props.extraClass ? ` ${props.extraClass}` : '')}
                     href={MEDIA_URL + resumeFile}
                     download='Ramil_Suleimanov_resume.pdf'
                     target='_blank'

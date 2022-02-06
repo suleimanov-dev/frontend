@@ -3,9 +3,16 @@
 .about__technologies
     margin-top: 40px
 
-.technologies__row .highlight
-    font-weight: styles.$semi-bold
-    color: styles.$secondary-content
+    @media (max-width: 650px)
+        margin-top: 42px
+
+.technologies__row
+    @media (max-width: 535px)
+        margin-top: 7px
+
+    .highlight
+        font-weight: styles.$semi-bold
+        color: styles.$secondary-content
 
 $color-collection: (styles.$purple, styles.$green, styles.$yellow, styles.$red)
 @for $i from 0 to length($color-collection)

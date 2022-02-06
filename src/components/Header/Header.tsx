@@ -23,7 +23,7 @@ const Header = () => {
                 </> : <Link className='nav__link' to='/portfolio'>~Back</Link>}
             </nav>
             <div className='header__extra'>
-                {location.pathname === '/' ? <DownloadResumeButton/> : null}
+                {location.pathname === '/' ? <DownloadResumeButton extraClass='download-resume-btn--header'/> : null}
             </div>
         </header>
     );

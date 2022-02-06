@@ -5,6 +5,18 @@
     justify-content: space-between
     padding: 53px 74px 0
 
+    @media (max-width: 1150px)
+        padding: 53px 32px 0
+
+    @media (max-width: 600px)
+        padding: 42px 15px 0
+
+    &__nav
+        @media (max-width: 650px)
+            display: flex
+            justify-content: center
+            width: 100%
+
 .nav__link
     text-decoration: none
     color: styles.$secondary-content

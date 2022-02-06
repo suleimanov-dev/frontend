@@ -4,6 +4,7 @@ import {MEDIA_URL} from '@/config';
 import Info from '@pages/AboutMe/Resume/Info/Info';
 import ContactLinks from '@pages/AboutMe/Resume/ContactLinks/ContactLinks';
 import TechBlock from '@pages/AboutMe/Resume/TechBlock/TechBlock';
+import DownloadResumeButton from '@components/DownloadResumeButton/DownloadResumeButton';
 
 import './Resume.sass';
 
@@ -22,6 +23,7 @@ const Resume: FC<ResumeProps> = (props) => {
                 <h1 className='about__name'>{props.name}</h1>
                 <Info/>
                 <ContactLinks contactLinks={props.contactLinks}/>
+                <DownloadResumeButton extraClass='download-resume-btn--resume'/>
                 <TechBlock technologyBlocks={props.technologyBlocks}/>
             </div>
         </div>
