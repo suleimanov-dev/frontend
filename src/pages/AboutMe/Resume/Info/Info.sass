@@ -1,21 +1,22 @@
 @use '~@styles/index.sass' as styles
 
-.resume__info
+.about__job-and-location
     color: styles.$secondary-content
     display: flex
     align-items: center
     margin-top: 7px
 
-    .job
+.about
+    &__job
         font-weight: styles.$bold
         font-size: styles.$small-medium
 
-    .location
+    &__location
         display: flex
         align-items: center
         font-size: styles.$small
         margin-left: 10px
 
-        &__icon
-            height: styles.$small - 1px
-            margin-right: 3px
+.location__icon
+    height: styles.$small - 1px
+    margin-right: 3px

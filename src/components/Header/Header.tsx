@@ -3,34 +3,26 @@ import {Link, useLocation} from 'react-router-dom';
 
 import DownloadResumeButton from '@components/DownloadResumeButton/DownloadResumeButton';
 
-import classes from './Header.module.sass';
+import './Header.sass';
 
 const Header = () => {
     const location = useLocation();
 
     return (
-        <header className={classes['header']}>
-            <nav className={classes['nav']}>
-                {!new RegExp('/portfolio/.*/').test(location.pathname) ?
-                    <>
-                        <Link
-                            className={location.pathname === '/' ? classes['nav__link--current'] : classes['nav__link']}
-                            to="/"
-                        >
-                            ~About
-                        </Link>
-                        <Link
-                            className={location.pathname === '/portfolio' ? classes['nav__link--current'] : classes['nav__link']}
-                            to="/portfolio"
-                        >
-                            ~Portfolio
-                        </Link>
-                    </>
-                    :
-                    <Link className={classes['nav__link']} to="/portfolio">~Back</Link>
-                }
+        <header className='header'>
+            <nav className='header__nav'>
+                {!new RegExp('/portfolio/.*/').test(location.pathname) ? <>
+                    <Link
+                        className={'nav__link' + (location.pathname === '/' ? ' nav__link--current' : '')}
+                        to='/'
+                    >~About</Link>
+                    <Link
+                        className={'nav__link' + (location.pathname === '/portfolio' ? ' nav__link--current' : '')}
+                        to='/portfolio'
+                    >~Portfolio</Link>
+                </> : <Link className='nav__link' to='/portfolio'>~Back</Link>}
             </nav>
-            <div>
+            <div className='header__extra'>
                 {location.pathname === '/' ? <DownloadResumeButton/> : null}
             </div>
         </header>

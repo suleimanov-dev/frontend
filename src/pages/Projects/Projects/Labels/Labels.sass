@@ -1,0 +1,28 @@
+@use '~@styles/index.sass' as styles
+
+.projects-element__label-block
+    display: flex
+    align-items: center
+
+    &:nth-child(n+2)
+        margin-top: 8px
+
+.projects-element-label-block
+    &__title
+        color: styles.$tertiary-content
+        font-size: styles.$small-medium
+
+    &__element
+        display: inline-block
+        color: styles.$tertiary-content
+        font-size: styles.$extra-small
+        border: 1px solid styles.$secondary-stroke
+        border-radius: 100px
+        background: styles.$secondary-fill
+        padding: 1px 9.5px
+
+        &:nth-child(2)
+            margin-left: 10px
+
+        &:nth-last-child(n+2)
+            margin-right: 5px

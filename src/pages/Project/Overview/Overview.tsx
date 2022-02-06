@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
 import 'external-svg-loader';
+import ReactPlayer from 'react-player';
 
 import {MEDIA_URL} from '@/config';
 
-import classes from './Overview.module.sass';
-import ReactPlayer from 'react-player';
+import './Overview.sass';
 
 interface OverviewVideoProps {
     video: string,
@@ -16,7 +16,7 @@ const Overview: FC<OverviewVideoProps> = (props) => {
         <>
             {props.video !== '' ?
                 <ReactPlayer
-                    className={classes['overview-video']}
+                    className='main--project__block project__overview-video'
                     url={MEDIA_URL + props.video}
                     controls={true}
                     // light={`${MEDIA_URL}/${projectInfo['overview_video_preview']}`}

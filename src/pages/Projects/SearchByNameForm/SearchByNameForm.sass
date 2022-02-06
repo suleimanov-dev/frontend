@@ -1,6 +1,6 @@
 @use '~@styles/index.sass' as styles
 
-.search-by-name
+.search-project-by-name
     display: flex
     align-items: center
     flex-direction: row-reverse
@@ -18,10 +18,10 @@
         width: 100%
         padding: 15px 15px
 
-    > input::placeholder
-        color: styles.$tertiary-content
+        &::placeholder
+            color: styles.$tertiary-content
 
-    > input:focus ~ label > svg > path
+        &:focus ~ label > svg > path
             fill: styles.$secondary-content
 
     > label

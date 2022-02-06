@@ -1,6 +1,6 @@
 @use '~@styles/index.sass' as styles
 
-.download-btn-wrapper
+.download-resume-btn
     transition: filter ease-out .15s
     display: block
     text-decoration: none
@@ -10,16 +10,16 @@
     font-size: styles.$small-medium
     padding: 1px
 
-    .download-btn
+    &:hover
+        filter: brightness(75%)
+
+    &__content-wrapper
         border-radius: 15px
         background: #000
         padding: 5.5px 29px
 
-        .download-btn-inner
-            color: transparent
-            -webkit-text-fill-color: transparent
-            background: styles.$gradient
-            -webkit-background-clip: text
-
-.download-btn-wrapper:hover
-    filter: brightness(75%)
+    &__content
+        color: transparent
+        -webkit-text-fill-color: transparent
+        background: styles.$gradient
+        -webkit-background-clip: text

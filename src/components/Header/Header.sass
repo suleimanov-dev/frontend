@@ -1,0 +1,18 @@
+@use '~@styles/index.sass' as styles
+
+.header
+    display: flex
+    justify-content: space-between
+    padding: 53px 74px 0
+
+.nav__link
+    text-decoration: none
+    color: styles.$secondary-content
+    line-height: 31px
+
+    &:nth-child(n+2)
+        margin-left: 32px
+
+    &--current
+        cursor: default
+        color: styles.$primary-content

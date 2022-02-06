@@ -1,0 +1,33 @@
+@use '~@styles/index.sass' as styles
+
+.about__contacts
+    display: flex
+    margin-top: 15.5px
+
+.contacts__contact
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 1px solid styles.$secondary-stroke
+    border-radius: 100px
+    background: styles.$secondary-fill
+    transition: background ease-out 0.15s
+    width: 24.5px
+    height: 24.5px
+
+    &:nth-child(n+2)
+        margin-left: 10.5px
+
+    &:hover
+        background: styles.$secondary-stroke
+
+        .contact__icon path
+            fill: styles.$primary-content
+
+.contact__icon
+    width: 10px
+    height: 10px
+
+    path
+        fill: styles.$tertiary-content
+        transition: fill ease-out 0.15s

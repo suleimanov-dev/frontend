@@ -5,7 +5,7 @@ import Info from '@pages/AboutMe/Resume/Info/Info';
 import ContactLinks from '@pages/AboutMe/Resume/ContactLinks/ContactLinks';
 import TechBlock from '@pages/AboutMe/Resume/TechBlock/TechBlock';
 
-import classes from './Resume.module.sass';
+import './Resume.sass';
 
 interface ResumeProps {
     portrait: string,
@@ -16,10 +16,10 @@ interface ResumeProps {
 
 const Resume: FC<ResumeProps> = (props) => {
     return (
-        <div className={classes['resume']}>
-            <img className={classes['portrait']} src={MEDIA_URL + props.portrait} alt="My portrait"/>
-            <div className={classes['content']}>
-                <h1 className={classes['name']}>{props.name}</h1>
+        <div className='main--about-me__block resume'>
+            <img className='resume__portrait' src={MEDIA_URL + props.portrait} alt='My portrait'/>
+            <div className='resume__about'>
+                <h1 className='about__name'>{props.name}</h1>
                 <Info/>
                 <ContactLinks contactLinks={props.contactLinks}/>
                 <TechBlock technologyBlocks={props.technologyBlocks}/>

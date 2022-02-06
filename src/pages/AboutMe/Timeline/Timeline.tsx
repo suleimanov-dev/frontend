@@ -3,7 +3,7 @@ import React, {FC, useEffect, useState} from 'react';
 import {getYear} from '@utils/helpers';
 import TimelineService from '@services/TimelineService';
 
-import classes from './Timeline.module.sass';
+import './Timeline.sass';
 
 const Timeline: FC = () => {
     const [timeline, setTimeline] = useState([]);
@@ -18,17 +18,20 @@ const Timeline: FC = () => {
     }
 
     return (
-        <div className={classes['timeline']}>
+        <div className='main--about-me__block timeline'>
             {timeline.map((timelineBlock: any) => (
-                <div className={classes['timeline-block']} key={timelineBlock['id']}>
-                    <div className={classes['timeline-block__left']}>&bull;</div>
-                    <div className={classes['timeline-block__right']}>
-                        <div className={classes['years']}>
+                <div className='timeline__element' key={timelineBlock['id']}>
+                    <div className='timeline-element__dot'>&bull;</div>
+                    <div className='timeline-element__content'>
+                        <div className='timeline-element__period'>
                             {getYear(timelineBlock['start_year'])}
                             &ndash;
                             {timelineBlock['end_year'] ? getYear(timelineBlock['end_year']) : 'present'}
                         </div>
-                        <div className={classes['text']} dangerouslySetInnerHTML={{__html: timelineBlock['content']}}/>
+                        <div
+                            className='timeline-element__text'
+                            dangerouslySetInnerHTML={{__html: timelineBlock['content']}}
+                        />
                     </div>
                 </div>
             ))}

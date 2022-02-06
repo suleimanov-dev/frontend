@@ -4,7 +4,7 @@ import MainInfoService from '@services/MainInfoService';
 import Resume from '@pages/AboutMe/Resume/Resume';
 import Timeline from '@pages/AboutMe/Timeline/Timeline';
 
-import classes from './AboutMePage.module.sass'
+import './AboutMePage.sass';
 
 const AboutMePage: FC = () => {
     const [mainInfo, setMainInfo] = useState({
@@ -25,7 +25,7 @@ const AboutMePage: FC = () => {
     }
 
     return (
-        <main className={classes['main']}>
+        <main className='main--about-me'>
             <Resume
                 portrait={mainInfo['portrait']}
                 name={mainInfo['name']}

@@ -1,0 +1,32 @@
+@use '~@styles/index.sass' as styles
+
+
+.timeline__element
+    display: flex
+    transition: background 0.2s ease-out
+    border-radius: 15px
+
+    &:nth-child(n+2)
+        margin-top: 43px
+
+.timeline-element
+    &__dot
+        font-weight: styles.$bold
+        line-height: styles.$medium
+
+    &__content
+        margin-left: 5px
+
+        > div:nth-child(n+2)
+            margin-top: 7px
+
+    &__period
+        font-weight: styles.$bold
+
+    &__text
+        color: styles.$secondary-content
+
+        a
+            color: styles.$secondary-content
+            font-weight: styles.$semi-bold
+            font-style: italic

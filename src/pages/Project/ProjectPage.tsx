@@ -7,7 +7,7 @@ import Description from '@pages/Project/Description/Description';
 import Overview from '@pages/Project/Overview/Overview';
 import Labels from '@pages/Project/Labels/Labels';
 
-import classes from './ProjectPage.module.sass'
+import './ProjectPage.sass';
 
 const ProjectPage: FC = () => {
     const params = useParams();
@@ -36,7 +36,7 @@ const ProjectPage: FC = () => {
     }
 
     return (
-        <main className={classes['main']}>
+        <main className='main--project'>
             <MainInfo
                 name={project['name']}
                 icon={project['icon']}

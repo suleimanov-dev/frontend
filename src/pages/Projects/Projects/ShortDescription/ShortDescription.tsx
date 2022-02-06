@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-import classes from '@pages/Projects/Projects/ShortDescription/ShortDescription.module.sass'
+import './ShortDescription.sass';
 
 interface ShortDescriptionProps {
     shortDescription: string,
@@ -8,7 +8,7 @@ interface ShortDescriptionProps {
 
 const ShortDescription: FC<ShortDescriptionProps> = (props) => {
     return (
-        <div className={classes['short-description']}>
+        <div className='projects-element__short-description'>
             {props.shortDescription}
         </div>
     );

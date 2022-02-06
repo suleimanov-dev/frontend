@@ -4,7 +4,7 @@ import ProjectService from '@services/ProjectService';
 import SearchByNameForm from '@pages/Projects/SearchByNameForm/SearchByNameForm';
 import Projects from '@pages/Projects/Projects/Projects';
 
-import classes from './ProjectsPage.module.sass';
+import './ProjectsPage.sass';
 
 const ProjectsPage: FC = () => {
     const [projects, setProjects] = useState([]);
@@ -25,8 +25,8 @@ const ProjectsPage: FC = () => {
     }
 
     return (
-        <main className={classes['main']}>
-            <SearchByNameForm setSearchQuery={setSearchQuery}/>
+        <main className='main--projects'>
+            <SearchByNameForm onSearchQueryChange={setSearchQuery}/>
             <Projects projects={filteredProjects}/>
         </main>
     );

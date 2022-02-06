@@ -2,24 +2,24 @@ import React, {FC} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
-import classes from './SearchByNameForm.module.sass';
+import './SearchByNameForm.sass';
 
 interface SearchByNameFormProps {
-    setSearchQuery: Function,
+    onSearchQueryChange: Function,
 }
 
 const SearchByNameForm: FC<SearchByNameFormProps> = (props) => {
     return (
-        <div className={classes['search-by-name']}>
+        <div className='search-project-by-name'>
             <input
                 id='search-by-name'
                 type='text'
                 name='search-by-name'
                 placeholder='Project name'
-                onChange={(e) => props.setSearchQuery(e.target.value)}
+                onChange={(e) => props.onSearchQueryChange(e.target.value)}
                 autoComplete={'off'}
             />
-            <label htmlFor='search-by-name'><FontAwesomeIcon icon={faSearch} /></label>
+            <label htmlFor='search-by-name'><FontAwesomeIcon icon={faSearch}/></label>
         </div>
     );
 };

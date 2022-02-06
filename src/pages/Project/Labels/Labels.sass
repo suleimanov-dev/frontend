@@ -1,0 +1,41 @@
+@use '~@styles/index.sass' as styles
+
+.project__label-blocks
+    display: flex
+
+.project__label-block
+    width: 50%
+    border-radius: 15px
+    background: styles.$primary-gradient
+    padding: 23px 35px
+
+    &--left
+        margin-right: 20px
+
+    &--right
+        margin-left: 20px
+
+.project-label-block
+    &__title
+        font-weight: styles.$bold
+        font-size: styles.$medium-large
+
+    &__content
+        margin-top: 26px
+
+    &__element
+        display: flex
+        align-items: center
+
+        &:nth-child(n+2)
+            margin-top: 13.5px
+
+.project-label-block-element
+    &__icon
+        width: 20px
+        height: 20px
+
+    &__name
+        color: styles.$secondary-content
+        font-size: styles.$small-medium
+        margin-left: 15px

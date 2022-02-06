@@ -4,10 +4,7 @@
     width: 100%
     margin-top: 36.8px
 
-    .projects-not-found
-        text-align: center
-
-    .project
+    &__element
         transition: ease-out .15s
         text-decoration: none
         color: styles.$primary-content
@@ -20,8 +17,11 @@
         > div:nth-child(n+2)
             margin-top: 25px
 
-    .project:nth-child(n+2)
-        margin-top: 23px
+        &:nth-child(n+2)
+            margin-top: 23px
 
-    .project:hover
-        border: 1px solid styles.$secondary-stroke
+        &:hover
+            border: 1px solid styles.$secondary-stroke
+
+.projects-not-found-text
+    text-align: center

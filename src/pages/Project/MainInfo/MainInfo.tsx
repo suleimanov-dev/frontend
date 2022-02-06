@@ -4,7 +4,7 @@ import 'external-svg-loader';
 import {MEDIA_URL} from '@/config';
 import {prettifyDateString, capitalize} from '@utils/helpers';
 
-import classes from './MainInfo.module.sass';
+import './MainInfo.sass';
 
 interface MainInfoProps {
     name: string,
@@ -17,36 +17,36 @@ interface MainInfoProps {
 
 const MainInfo: FC<MainInfoProps> = (props) => {
     return (
-        <div className={classes['main-info']}>
-            <div className={classes['icon-name']}>
-                <img className={classes['icon-name__icon']} src={MEDIA_URL + props.icon} alt="Project icon"/>
-                <div className={classes['icon-name__name']}>{props.name}</div>
+        <div className='main--project__block project__main-info'>
+            <div className='icon-name'>
+                <img className='icon-name__icon' src={MEDIA_URL + props.icon} alt="Project icon"/>
+                <div className='icon-name__name'>{props.name}</div>
             </div>
-            <div className={classes['dev-info']}>
-                <div className={classes['dev-info__element']}>
+            <div className='dev-info'>
+                <div className='dev-info__element'>
                     Date created:&nbsp;<span>{prettifyDateString(props.monthCreated)}</span>
                 </div>
-                <div className={classes['dev-info__element']}>
+                <div className='dev-info__element'>
                     Involvement:&nbsp;<span>{capitalize(props.involvement)}</span>
                 </div>
-                <div className={classes['dev-info__element']}>
+                <div className='dev-info__element'>
                     Designation:&nbsp;<span>{capitalize(props.designation)}</span>
                 </div>
             </div>
             {props.links.length > 0 ?
-                <div className={classes['links']}>
+                <div className='links'>
                     {props.links.map((link: any) => (
                         <a
-                            className={classes['link']}
+                            className='link'
                             href={link['link']}
                             target="_blank"
                             title={link['link_type']['name']}
                             key={link['id']}
                         >
-                            <div className={classes['link__icon']}>
+                            <div className='link__icon'>
                                 <svg data-src={MEDIA_URL + link['link_type']['icon']}/>
                             </div>
-                            <div className={classes['link__link']}>{link['link']}</div>
+                            <div className='link__link'>{link['link']}</div>
                         </a>
                     ))}
                 </div>

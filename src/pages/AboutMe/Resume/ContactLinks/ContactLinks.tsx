@@ -3,24 +3,24 @@ import 'external-svg-loader';
 
 import {MEDIA_URL} from '@/config';
 
-import classes from './ContactLinks.module.sass';
+import './ContactLinks.sass';
 
 interface ResumeContactLinksProps {
-    contactLinks: object[]
+    contactLinks: object[],
 }
 
 const ContactLinks: FC<ResumeContactLinksProps> = (props) => {
     return (
-        <div className={classes['resume__contact-links']}>
-            {props.contactLinks.map((link: any) => (
+        <div className='about__contacts'>
+            {props.contactLinks.map((contact: any) => (
                 <a
-                    className={classes['contact-link']}
-                    href={link['link']}
-                    title={link['name']}
+                    className='contacts__contact'
+                    href={contact['link']}
+                    title={contact['name']}
                     target="_blank"
-                    key={link['id']}
+                    key={contact['id']}
                 >
-                    <svg className={classes['contact-link__icon']} data-src={MEDIA_URL + link['icon']}/>
+                    <svg className='contact__icon' data-src={MEDIA_URL + contact['icon']}/>
                 </a>
             ))}
         </div>

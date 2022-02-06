@@ -2,14 +2,14 @@ import React, {FC} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons';
 
-import classes from './Info.module.sass';
+import './Info.sass';
 
 const Info: FC = () => {
     return (
-        <div className={classes['resume__info']}>
-            <div className={classes['job']}>Web-Developer</div>
-            <div className={classes['location']}>
-                <FontAwesomeIcon className={classes['location__icon']} icon={faMapMarkerAlt}/>
+        <div className='about__job-and-location'>
+            <div className='about__job'>Web-Developer</div>
+            <div className='about__location'>
+                <FontAwesomeIcon className='location__icon' icon={faMapMarkerAlt}/>
                 Kazan, Russia
             </div>
         </div>
