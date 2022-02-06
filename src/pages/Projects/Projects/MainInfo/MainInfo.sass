@@ -5,18 +5,33 @@
         display: flex
         align-items: center
 
+        @media (max-width: 450px)
+            flex-direction: column
+
     &__icon
         border-radius: 10px
         width: 64px
         height: 64px
 
+        @media (max-width: 450px)
+            display: none
+
     &__content
         margin-left: 13px
 
+        @media (max-width: 450px)
+            margin-left: 0
+
     &__name
+        display: inline-block
+        word-break: break-all
         font-weight: styles.$bold
         font-size: styles.$large
+        width: 100%
 
     &__stats
+        display: inline-block
+        word-break: break-all
         color: styles.$tertiary-content
         font-size: styles.$small
+        width: 100%

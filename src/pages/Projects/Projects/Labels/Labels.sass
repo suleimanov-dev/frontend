@@ -1,8 +1,8 @@
 @use '~@styles/index.sass' as styles
 
 .projects-element__label-block
-    display: flex
-    align-items: center
+    @media (max-width: 650px)
+        display: none
 
     &:nth-child(n+2)
         margin-top: 8px

@@ -3,6 +3,8 @@
 .header
     display: flex
     justify-content: space-between
+    max-width: 2560px
+    width: 100%
     padding: 53px 74px 0
 
     @media (max-width: 1150px)
@@ -10,6 +12,9 @@
 
     @media (max-width: 600px)
         padding: 42px 15px 0
+
+    @media (min-width: 2561px)
+        max-width: 1440px
 
     &__nav
         @media (max-width: 650px)
