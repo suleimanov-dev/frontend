@@ -3,17 +3,35 @@
 .project__label-blocks
     display: flex
 
+    @media (max-width: 700px)
+        flex-direction: column
+
 .project__label-block
     width: 50%
     border-radius: 15px
     background: styles.$primary-gradient
     padding: 23px 35px
 
+    @media (max-width: 700px)
+        width: 100%
+        padding: 15px 23px
+
+    @media (max-width: 600px)
+        background: transparent
+        padding: 0
+
     &--left
         margin-right: 20px
 
+        @media (max-width: 700px)
+            margin-right: 0
+
     &--right
         margin-left: 20px
+
+        @media (max-width: 700px)
+            margin-top: 44px
+            margin-left: 0
 
 .project-label-block
     &__title
