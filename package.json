@@ -6,7 +6,8 @@
     "author": "Ramil Suleimanov <lllumineux@outlook.com>",
     "license": "MIT",
     "scripts": {
-        "dev": "webpack-dev-server --mode development"
+        "dev": "webpack-dev-server --mode development",
+        "build": "webpack --mode production"
     },
     "dependencies": {
         "@babel/core": "^7.16.10",
