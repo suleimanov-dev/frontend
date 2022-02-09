@@ -6,6 +6,7 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = function (_env, argv) {
     const isProduction = argv.mode === 'production';
@@ -117,6 +118,17 @@ module.exports = function (_env, argv) {
             }),
             new ForkTsCheckerWebpackPlugin({
                 async: false,
+            }),
+            new CopyPlugin({
+                patterns: [
+                    {
+                        from: __dirname + '/public',
+                        to: __dirname + '/dist',
+                        filter: async (resourcePath) => {
+                            return !(resourcePath === __dirname + '/public/index.html')
+                        }
+                    },
+                ],
             }),
         ].filter(Boolean),
         optimization: {
