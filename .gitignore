@@ -133,4 +133,4 @@ sketch
 # End of https://www.toptal.com/developers/gitignore/api/jetbrains+all,yarn,react
 
 .env
-./public/env.js
+public/env.js
