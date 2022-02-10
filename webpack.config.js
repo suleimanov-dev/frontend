@@ -7,6 +7,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = function (_env, argv) {
     const isProduction = argv.mode === 'production';
@@ -130,6 +131,7 @@ module.exports = function (_env, argv) {
                     },
                 ],
             }),
+            new Dotenv(),
         ].filter(Boolean),
         optimization: {
             minimize: isProduction,
