@@ -5,6 +5,7 @@ import SearchByNameForm from '@pages/Projects/SearchByNameForm/SearchByNameForm'
 import Projects from '@pages/Projects/Projects/Projects';
 
 import './ProjectsPage.sass';
+import Header from '@components/Header/Header';
 
 const ProjectsPage: FC = () => {
     const [projects, setProjects] = useState([]);
@@ -25,10 +26,13 @@ const ProjectsPage: FC = () => {
     }
 
     return (
-        <main className='main--projects'>
-            <SearchByNameForm onSearchQueryChange={setSearchQuery}/>
-            <Projects projects={filteredProjects}/>
-        </main>
+        <>
+            <Header/>
+            <main className='main--projects'>
+                <SearchByNameForm onSearchQueryChange={setSearchQuery}/>
+                <Projects projects={filteredProjects}/>
+            </main>
+        </>
     );
 };
 

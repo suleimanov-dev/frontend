@@ -5,6 +5,7 @@ import Resume from '@pages/AboutMe/Resume/Resume';
 import Timeline from '@pages/AboutMe/Timeline/Timeline';
 
 import './AboutMePage.sass';
+import Header from '@components/Header/Header';
 
 const AboutMePage: FC = () => {
     const [mainInfo, setMainInfo] = useState({
@@ -25,15 +26,18 @@ const AboutMePage: FC = () => {
     }
 
     return (
-        <main className='main--about-me'>
-            <Resume
-                portrait={mainInfo['portrait']}
-                name={mainInfo['name']}
-                contactLinks={mainInfo['contact_links']}
-                technologyBlocks={mainInfo['technology_blocks']}
-            />
-            <Timeline/>
-        </main>
+        <>
+            <Header/>
+            <main className='main--about-me'>
+                <Resume
+                    portrait={mainInfo['portrait']}
+                    name={mainInfo['name']}
+                    contactLinks={mainInfo['contact_links']}
+                    technologyBlocks={mainInfo['technology_blocks']}
+                />
+                <Timeline/>
+            </main>
+        </>
     );
 };
 

@@ -8,6 +8,7 @@ import Overview from '@pages/Project/Overview/Overview';
 import Labels from '@pages/Project/Labels/Labels';
 
 import './ProjectPage.sass';
+import Header from '@components/Header/Header';
 
 const ProjectPage: FC = () => {
     const params = useParams();
@@ -36,19 +37,22 @@ const ProjectPage: FC = () => {
     }
 
     return (
-        <main className='main--project'>
-            <MainInfo
-                name={project['name']}
-                icon={project['icon']}
-                monthCreated={project['month_created']}
-                involvement={project['involvement']}
-                designation={project['designation']}
-                links={project['links']}
-            />
-            <Description articles={project['articles']}/>
-            <Overview video={project['overview_video']} preview={project['overview_video_preview']}/>
-            <Labels technologies={project.technologies} instruments={project.instruments}/>
-        </main>
+        <>
+            <Header/>
+            <main className='main--project'>
+                <MainInfo
+                    name={project['name']}
+                    icon={project['icon']}
+                    monthCreated={project['month_created']}
+                    involvement={project['involvement']}
+                    designation={project['designation']}
+                    links={project['links']}
+                />
+                <Description articles={project['articles']}/>
+                <Overview video={project['overview_video']} preview={project['overview_video_preview']}/>
+                <Labels technologies={project.technologies} instruments={project.instruments}/>
+            </main>
+        </>
     );
 };
 
