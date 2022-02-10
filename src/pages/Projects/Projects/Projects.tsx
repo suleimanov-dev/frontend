@@ -17,7 +17,7 @@ const Projects: FC<ProjectsProps> = (props) => {
             {props.projects.length > 0 ? props.projects.map((project: any) => (
                 <Link
                     className='projects__element'
-                    to={`/portfolio/${project['name']}/`}
+                    to={`/portfolio/${project['name']}`}
                     key={project['id']}
                 >
                     <MainInfo

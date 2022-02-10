@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <header className='header'>
             <nav className='header__nav'>
-                {!new RegExp('/portfolio/.*/').test(location.pathname) ? <>
+                {!new RegExp('/portfolio/.*').test(location.pathname) ? <>
                     <Link
                         className={'nav__link' + (location.pathname === '/' ? ' nav__link--current' : '')}
                         to='/'
