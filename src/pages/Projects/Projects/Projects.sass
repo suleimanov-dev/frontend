@@ -32,8 +32,13 @@
             @media (max-width: 450px)
                 margin-top: 42px
 
-        &:hover
-            border: 1px solid styles.$secondary-stroke
+        @media (min-width: 501px)
+            &:hover
+                border: 1px solid styles.$secondary-stroke
+
+        @media (max-width: 501px)
+            &:active
+                border: 1px solid styles.$secondary-stroke
 
 
 .projects-not-found-text

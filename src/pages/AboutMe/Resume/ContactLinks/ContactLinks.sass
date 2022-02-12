@@ -1,11 +1,10 @@
 @use '~@styles/index.sass' as styles
 
 .about__contacts
-    display: flex
     margin-top: 12px
 
 .contacts__contact
-    display: flex
+    display: inline-flex
     justify-content: center
     align-items: center
     border: 1px solid styles.$secondary-stroke
@@ -15,18 +14,34 @@
     width: 24.5px
     height: 24.5px
 
-    &:nth-child(n+2)
-        margin-left: 10.5px
+    @media (max-width: 500px)
+        width: 34px
+        height: 34px
 
-    &:hover
-        background: styles.$secondary-stroke
+    &:nth-last-child(n+2)
+        margin-right: 10.5px
 
-        .contact__icon path
-            fill: styles.$primary-content
+    @media (min-width: 501px)
+        &:hover
+            background: styles.$secondary-stroke
+
+            .contact__icon path
+                fill: styles.$primary-content
+
+    @media (max-width: 500px)
+        &:active
+            background: styles.$secondary-stroke
+
+            .contact__icon path
+                fill: styles.$primary-content
 
 .contact__icon
     width: 10px
     height: 10px
+
+    @media (max-width: 500px)
+        width: 14px
+        height: 14px
 
     path
         fill: styles.$tertiary-content

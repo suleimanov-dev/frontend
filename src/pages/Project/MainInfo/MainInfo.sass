@@ -85,8 +85,16 @@
                 padding: 5px 22px 5px 11px
                 margin-left: 11px
 
+                @media (max-width: 500px)
+                    padding: 7px 22px 7px 11px
+
         .link:nth-last-child(n+2)
             margin-right: 29px
 
-        .link:hover
-            border: 1px solid styles.$secondary-stroke
+        @media (min-width: 501px)
+            .link:hover
+                border: 1px solid styles.$secondary-stroke
+
+        @media (max-width: 500px)
+            .link:hover
+                border: 1px solid styles.$secondary-stroke
