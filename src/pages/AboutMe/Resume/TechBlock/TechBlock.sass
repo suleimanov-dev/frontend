@@ -7,8 +7,9 @@
         margin-top: 42px
 
 .technologies__row
-    @media (max-width: 535px)
-        margin-top: 7px
+    &:nth-child(n+2)
+        @media (max-width: 535px)
+            margin-top: 1em
 
     .highlight
         font-weight: styles.$semi-bold
