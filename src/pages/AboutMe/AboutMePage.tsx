@@ -9,8 +9,9 @@ import Header from '@components/Header/Header';
 
 const AboutMePage: FC = () => {
     const [mainInfo, setMainInfo] = useState({
-        name: '',
         portrait: '',
+        name: '',
+        location: '',
         contact_links: [],
         technology_blocks: [],
         resume_file: ''
@@ -32,6 +33,7 @@ const AboutMePage: FC = () => {
                 <Resume
                     portrait={mainInfo['portrait']}
                     name={mainInfo['name']}
+                    location={mainInfo['location']}
                     contactLinks={mainInfo['contact_links']}
                     technologyBlocks={mainInfo['technology_blocks']}
                 />

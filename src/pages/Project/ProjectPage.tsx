@@ -26,6 +26,7 @@ const ProjectPage: FC = () => {
         technologies: [],
         instruments: [],
     });
+    const [isProjectLoading, setIsProjectLoading] = useState(true);
 
     useEffect(() => {
         fetchProjectInfo().then();
@@ -34,6 +35,7 @@ const ProjectPage: FC = () => {
     async function fetchProjectInfo() {
         const project = await ProjectService.get(params.projectName);
         setProject(project);
+        setIsProjectLoading(false);
     }
 
     return (
@@ -47,9 +49,14 @@ const ProjectPage: FC = () => {
                     involvement={project['involvement']}
                     designation={project['designation']}
                     links={project['links']}
+                    isLoading={isProjectLoading}
                 />
                 <Description articles={project['articles']}/>
-                <Overview video={project['overview_video']} preview={project['overview_video_preview']}/>
+                <Overview
+                    video={project['overview_video']}
+                    preview={project['overview_video_preview']}
+                    isLoading={isProjectLoading}
+                />
                 <Labels technologies={project.technologies} instruments={project.instruments}/>
             </main>
         </>

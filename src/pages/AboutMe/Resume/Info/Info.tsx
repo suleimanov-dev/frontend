@@ -4,14 +4,24 @@ import {faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons';
 
 import './Info.sass';
 
-const Info: FC = () => {
+interface InfoProps {
+    location: string,
+}
+
+const Info: FC<InfoProps> = (props) => {
     return (
         <div className='about__job-and-location'>
-            <div className='about__job'>Web-Developer</div>
-            <div className='about__location'>
-                <FontAwesomeIcon className='location__icon' icon={faMapMarkerAlt}/>
-                Kazan, Russia
-            </div>
+            {props.location ?
+                <>
+                    <div className='about__job'>Web-Developer</div>
+                    <div className='about__location'>
+                        <FontAwesomeIcon className='location__icon' icon={faMapMarkerAlt}/>
+                        {props.location}
+                    </div>
+                </>
+                :
+                <div className='skeleton skeleton-text' style={{maxWidth: '250px'}}/>
+            }
         </div>
     );
 };

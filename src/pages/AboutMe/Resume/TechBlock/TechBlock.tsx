@@ -41,15 +41,23 @@ const TechBlock: FC<ResumeTechBlockProps> = (props) => {
 
     return (
         <div className='about__technologies'>
-            {props.technologyBlocks.map((techBlock: any) => (
-                <div
-                    className='technologies__row'
-                    dangerouslySetInnerHTML={{__html: `&bull;&nbsp;${
-                        processTechBlockText(techBlock['content']) + techBlockExtraText[techBlock['type']]
-                    };`}}
-                    key={techBlock['id']}
-                />
-            ))}
+            {props.technologyBlocks.length > 0 ?
+                props.technologyBlocks.map((techBlock: any) => (
+                    <div
+                        className='technologies__row'
+                        dangerouslySetInnerHTML={{__html: `&bull;&nbsp;${
+                                processTechBlockText(techBlock['content']) + techBlockExtraText[techBlock['type']]
+                            };`}}
+                        key={techBlock['id']}
+                    />
+                ))
+                :
+                [...Array(5).keys()].map((index: number) => (
+                    <div className='technologies__row' key={index}>
+                        <div className='skeleton skeleton-text'/>
+                    </div>
+                ))
+            }
         </div>
     );
 };

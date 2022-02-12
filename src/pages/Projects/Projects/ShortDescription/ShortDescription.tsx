@@ -9,7 +9,15 @@ interface ShortDescriptionProps {
 const ShortDescription: FC<ShortDescriptionProps> = (props) => {
     return (
         <div className='projects-element__short-description'>
-            {props.shortDescription}
+            {props.shortDescription ?
+                props.shortDescription
+                :
+                <>
+                    <div className='skeleton skeleton-text'/>
+                    <div className='skeleton skeleton-text'/>
+                    <div className='skeleton skeleton-text'/>
+                </>
+            }
         </div>
     );
 };

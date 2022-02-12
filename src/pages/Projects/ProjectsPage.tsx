@@ -9,6 +9,7 @@ import Header from '@components/Header/Header';
 
 const ProjectsPage: FC = () => {
     const [projects, setProjects] = useState([]);
+    const [isProjectsLoading, setIsProjectsLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
 
     const filteredProjects = useMemo(() => {
@@ -23,6 +24,7 @@ const ProjectsPage: FC = () => {
     async function fetchProjects() {
         const projects = await ProjectService.list();
         setProjects(projects);
+        setIsProjectsLoading(false);
     }
 
     return (
@@ -30,7 +32,7 @@ const ProjectsPage: FC = () => {
             <Header/>
             <main className='main--projects'>
                 <SearchByNameForm onSearchQueryChange={setSearchQuery}/>
-                <Projects projects={filteredProjects}/>
+                <Projects projects={filteredProjects} isLoading={isProjectsLoading}/>
             </main>
         </>
     );

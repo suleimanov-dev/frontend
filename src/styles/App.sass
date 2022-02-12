@@ -19,3 +19,23 @@ body
     align-items: center
     width: 100%
     min-height: 100vh
+
+.skeleton
+    animation: skeleton-loading 1s linear infinite alternate
+
+.skeleton-text
+    border-radius: .125em
+    width: 100%
+    max-width: 80vw
+    height: .75em
+    margin-bottom: .25em
+
+    &:last-child:not(:first-child)
+        margin-bottom: 0
+        width: 80%
+
+@keyframes skeleton-loading
+    0%
+        background-color: #191919
+    100%
+        background-color: #242424

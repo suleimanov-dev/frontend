@@ -16,19 +16,40 @@ interface MainInfoProps {
 const MainInfo: FC<MainInfoProps> = (props) => {
     return (
         <div className='projects-element__main-info'>
-            <img
-                className='projects-element__icon'
-                src={MEDIA_URL + props.icon}
-                alt="Project icon"
-            />
+            {props.icon ?
+                <img
+                    className='projects-element__icon skeleton'
+                    // @ts-ignore
+                    onLoad={e => e.target.classList.remove('skeleton')}
+                    src={MEDIA_URL + props.icon}
+                    alt="Project icon"
+                />
+                :
+                <div className='projects-element__icon skeleton'/>
+            }
             <div className='projects-element__content'>
-                <div className='projects-element__name'>{props.name}</div>
+                <div className='projects-element__name'>
+                    {props.name ?
+                        props.name
+                        :
+                        <div
+                            className='skeleton skeleton-text'
+                            style={{height: '.75em', marginBottom: 0, maxWidth: '300px'}}
+                        />
+                    }
+                </div>
                 <div className='projects-element__stats'>
-                    {prettifyDateString(props.monthCreated)}
-                    &nbsp;&#x7C;&nbsp;
-                    {capitalize(props.involvement)}
-                    &nbsp;&#x7C;&nbsp;
-                    {capitalize(props.designation)}
+                    {props.monthCreated && props.involvement && props.designation ?
+                        <>
+                            {prettifyDateString(props.monthCreated)}
+                            &nbsp;&#x7C;&nbsp;
+                            {capitalize(props.involvement)}
+                            &nbsp;&#x7C;&nbsp;
+                            {capitalize(props.designation)}
+                        </>
+                        :
+                        <div className='skeleton skeleton-text' style={{maxWidth: '200px'}}/>
+                    }
                 </div>
             </div>
         </div>
