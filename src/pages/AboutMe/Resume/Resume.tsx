@@ -20,12 +20,11 @@ const Resume: FC<ResumeProps> = (props) => {
     return (
         <div className='main--about-me__block resume'>
             {props.portrait ?
-                <img
+                <div
                     className='resume__portrait skeleton'
                     // @ts-ignore
                     onLoad={e => e.target.classList.remove('skeleton')}
-                    src={MEDIA_URL + props.portrait}
-                    alt='My portrait'
+                    style={{backgroundImage: `url(${MEDIA_URL + props.portrait})`}}
                 />
                 :
                 <div className='resume__portrait skeleton'/>
