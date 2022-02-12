@@ -29,7 +29,7 @@ const Overview: FC<OverviewVideoProps> = (props) => {
                 :
                 <div
                     className='main--project__block project__overview-video skeleton'
-                    style={{width: '100%', paddingBottom: '56%'}}
+                    style={{width: '100%', paddingBottom: '56%', borderRadius: '10px'}}
                 />
             }
         </>
