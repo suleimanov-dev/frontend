@@ -21,6 +21,8 @@ const Overview: FC<OverviewVideoProps> = (props) => {
                         className='main--project__block project__overview-video'
                         url={MEDIA_URL + props.video}
                         controls={true}
+                        width='100%'
+                        height='0'
                         // light={`${MEDIA_URL}/${projectInfo['overview_video_preview']}`}
                         // playIcon={<FontAwesomeIcon icon={faPlay}/>}
                     />
@@ -29,7 +31,7 @@ const Overview: FC<OverviewVideoProps> = (props) => {
                 :
                 <div
                     className='main--project__block project__overview-video skeleton'
-                    style={{width: '100%', paddingBottom: '56%', borderRadius: '10px'}}
+                    style={{width: '100%', paddingBottom: '62.5%', borderRadius: '10px'}}
                 />
             }
         </>
